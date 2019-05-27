@@ -1,0 +1,44 @@
+%STRUCT_OCTAVE This simulates the Matlab STRUCT for Octave for printing
+
+function out = struct_octave(varargin)
+
+if nargout > 0
+  out = struct(varargin{:});
+  return
+end
+
+s = struct(varargin{:});
+f = fieldnames(s);
+n = numel(f);
+
+disp(' ')
+for i=1:n
+  item   = s.(f{i});
+  classi = class(item);
+  sizei  = ['%i' repmat('x%i',1,ndims(item)-1) ' '];
+  switch classi
+    case 'cell'
+      if isempty(item)
+        fprintf(['%12s: {}\n'],f{i});
+      else
+        fprintf(['%12s: {' sizei classi '}\n'],f{i},size(item));
+      end
+    case 'char'
+      if numel(item) < 40
+        fprintf(['%12s: ''' item '''\n'],f{i});
+      else
+        fprintf(['%12s: [' sizei classi ']\n'],f{i},size(item));
+      end
+    otherwise
+      if isempty(item)
+        fprintf(['%12s: []\n'],f{i});
+      elseif isvector(item) && (numel(item) <= 10 && all(item <= 1) && all(item >= 0))
+        numform = sprintf('%5.3f ',item);
+        fprintf(['%12s: [' sizei classi ']\n'],f{i},size(item));
+      else
+        fprintf(['%12s: [' sizei classi ']\n'],f{i},size(item));
+      end
+  end
+end
+  
+  
