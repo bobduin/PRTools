@@ -1,0 +1,15 @@
+<html><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools contents</a></td><td><p align="right"><a href="http://37steps.com/prtools" target="_top">PRTools manual</a></p></td></tr></table></p><head><title>onestm</title></head>
+<body bgcolor="#ffffff"><p align="center"><font face="Courier" size=5><strong>ONESTM</strong></font></p>
+<h3> Trainable mapping, maps any object on ones
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="3">&nbsp;&nbsp;&nbsp;&nbsp;W = ONESTM(A)</font><br>
+<font face="Courier" size="3">&nbsp;&nbsp;&nbsp;&nbsp;W = A*ONESTM</font><br>
+</p>
+<p></p><p>
+<table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="100"><font size="4"><strong>Input</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;A</font></td><td valign="baseline"><font face="Courier" size="2">    </font>Array or dataset</td></tr></table>
+</p><p><table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="120"><font size="4"><strong>Output</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;W</font></td><td valign="baseline"><font face="Courier" size="2">    </font>Ones mapping, if applied to dataset, it returns a dataset with ones&nbsp; of the same size.</td></tr></table>
+</p><h3> Description</h3><p> This is a trainable ones mapping that maps any dataset on ones.&nbsp; The difference with the fixed mapping is<font face="Courier" size="2"> ONESM </font>is that<font face="Courier" size="2"> ONESM(A) </font>returns&nbsp;<font face="Courier" size="2"> A </font>and that<font face="Courier" size="2"> W = ONESTM(A) </font>returns a mapping with input and output&nbsp; dimensionality the feature size of<font face="Courier" size="2"> A</font>. Consequently<font face="Courier" size="2"> B*W </font>returns ones with&nbsp; the size of and checks the feature size of<font face="Courier" size="2"> B </font>against<font face="Courier" size="2"> A</font>.</p>
+<p> This routine facilitates the construct of dyadic trainable mappings,&nbsp; like<font face="Courier" size="2"> W = (FISHERC < 0.5) </font></p><h3> See also</h3><p>
+<font face="Courier" size="3"><a href="../prtools/mappings.html">mappings</a>, <a href="../prtools/onesm.html">onesm</a>, </font></p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools contents</a></td><td><p align="right"><a href="http://37steps.com/prtools" target="_top">PRTools manual</a></p></td></tr></table></p></body></html>

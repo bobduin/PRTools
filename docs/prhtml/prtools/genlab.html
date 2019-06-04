@@ -1,0 +1,20 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>genlab</title></head>
+<p align="center"><font face="Courier" size=5><strong>GENLAB</strong></font></p>
+<h3> Generate labels for classes
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;LABELS = GENLAB(N,LABLIST)</font><br>
+</p>
+<p></p><p>
+<table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="100"><font size="4"><strong>Input</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;N</font></td><td valign="baseline"><font face="Courier" size="2">         </font>Number of labels to be generated<tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;LABLIST</font></td><td valign="baseline"><font face="Courier" size="2">   </font>Label names (optional; default: numeric labels<font face="Courier" size="2"> 1,2,3,...) </font></td></tr></table>
+</p><p><table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="120"><font size="4"><strong>Output</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;LABELS</font></td><td valign="baseline"><font face="Courier" size="2">    </font>Labels in a column vector or strinag array</td></tr></table>
+</p><h3> Description</h3><p> Generate a set of labels as defined by the<font face="Courier" size="2"> LABLIST. N </font>is a number or&nbsp; a row/column vector of the values for each class. If<font face="Courier" size="2"> N </font>is a vector, then&nbsp; the first N(i) labels get the value LABLIST(i<font face="Courier" size="2">,:). N </font>should have as many&nbsp; components as<font face="Courier" size="2"> LABLIST</font>. If<font face="Courier" size="2"> N </font>is a scalar, then<font face="Courier" size="2"> N </font>labels are generated for&nbsp; each class.<font face="Courier" size="2"> LABLIST </font>is a column vector or a string array. Labels can be&nbsp; used to construct a labeled dataset.</p><h3> Example(s)</h3><p>
+<font face="Courier" size="2">&nbsp;Numeric&nbsp;labels,&nbsp;1..10,&nbsp;10&nbsp;classes,&nbsp;100&nbsp;labels&nbsp;per&nbsp;class.
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;LAB1&nbsp;=&nbsp;GENLAB(100*ones(1,10));&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font><br><font face="Courier" size="2">&nbsp;Character&nbsp;labels,&nbsp;3&nbsp;classes,&nbsp;10&nbsp;labels&nbsp;per&nbsp;class.
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LAB2 = GENLAB([10 10 10], ['A';'B';'C']);</font><br>
+&nbsp; Name labels<font face="Courier" size="2">, 2 </font>classes<font face="Courier" size="2">, 50 </font>labels per class.&nbsp; The commands below are equivalent.<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LAB3 = GENLAB([50 50], {'Apple'; 'Pear'});</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LAB3 = GENLAB([50 50], ['Apple'; 'Pear ']);</font><br>
+</p><h3> See also</h3><p>
+<font face="Courier" size="3"><a href="../prtools/datasets.html">datasets</a>, dataset, </font></p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

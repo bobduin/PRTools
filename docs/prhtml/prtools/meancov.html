@@ -1,0 +1,19 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>meancov</title></head>
+<p align="center"><font face="Courier" size=5><strong>MEANCOV</strong></font></p>
+<h3> Fixed mapping estimating means and covariances of multiclass data
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;[U,G] = MEANCOV(A,N)</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;[U,G] = A*MEANCOV([],N)</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;[U,G] = A*MEANCOV(N)</font><br>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;INPUT</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;A    Dataset</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;N    Normalisation to be useduse for calculating covariances: by M, the</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number of samples in A (N = 1) or by M-1 (default, unbiased, N = 0).</font><br>
+</p>
+<p></p><p><table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="120"><font size="4"><strong>Output</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;U</font></td><td valign="baseline"><font face="Courier" size="2">      </font>Mean vectors, given as a dataset with all annotation of<font face="Courier" size="2"> A </font><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;G</font></td><td valign="baseline"><font face="Courier" size="2">      </font>Covariance matrices</td></tr></table>
+</p><h3> Description</h3><p> Computation of a set of mean vectors<font face="Courier" size="2"> U </font>and a set of covariance matrices<font face="Courier" size="2"> G </font> of the<font face="Courier" size="2"> C </font>classes in the dataset<font face="Courier" size="2"> A</font>. The covariance matrices are stored as a&nbsp;<font face="Courier" size="2"> 3-</font>dimensional matrix<font face="Courier" size="2"> G </font>of the size<font face="Courier" size="2"> K </font>x<font face="Courier" size="2"> K </font>x<font face="Courier" size="2"> C</font>, the class mean vectors as a&nbsp; labeled dataset<font face="Courier" size="2"> U </font>of the size<font face="Courier" size="2"> C </font>x<font face="Courier" size="2"> K</font>.</p>
+<p> The use of soft labels or target labels is supported.</p><h3> See also</h3><p>
+<font face="Courier" size="3"><a href="../prtools/datasets.html">datasets</a>, <a href="../prtools/nbayesc.html">nbayesc</a>, <a href="../prtools/distmaha.html">distmaha</a>, </font></p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

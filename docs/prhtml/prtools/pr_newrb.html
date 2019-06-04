@@ -1,0 +1,23 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>pr_newrb</title></head>
+<p align="center"><font face="Courier" size=5><strong>PR_NEWRB</strong></font></p>
+<h3></h3>
+<p><font face="Courier" size="2"> A </font>copy of Matlab's newrb, needed to correct a bug<br> displayFreq<font face="Courier" size="2"> = </font>inf is not accepted, by which display could not be skipped</p>
+<p><font face="Courier" size="2"> NEWRB </font>Design a radial basis network.</p>
+<p> Radial basis networks can be used to approximate functions.  <a href="matlab:doc newrb">newrb</a>&nbsp; adds neurons to the hidden layer of a radial basis network until it&nbsp; meets the specified mean squared error goal.</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&lta&nbsp;href="matlab:doc&nbsp;newrb"%gtnewrb&lt/a%gt(X,T,GOAL,SPREAD,MN,DF)&nbsp;takes&nbsp;these&nbsp;arguments,
+</font><br>&nbsp;<font face="Courier" size="2"> X      -</font> RxQ matrix of<font face="Courier" size="2"> Q </font>input vectors.&nbsp;<font face="Courier" size="2"> T      -</font> SxQ matrix of<font face="Courier" size="2"> Q </font>target class vectors.&nbsp;<font face="Courier" size="2"> GOAL   -</font> Mean squared error goal, default<font face="Courier" size="2"> = 0.0</font>.<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SPREAD&nbsp;-&nbsp;Spread&nbsp;of&nbsp;radial&nbsp;basis&nbsp;functions,&nbsp;default&nbsp;=&nbsp;1.0.
+</font><br>&nbsp;<font face="Courier" size="2"> MN     -</font> Maximum number of neurons, default is<font face="Courier" size="2"> Q</font>.&nbsp;<font face="Courier" size="2"> DF     -</font> Number of neurons to add between displays, default<font face="Courier" size="2"> = 25</font>.<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;and&nbsp;returns&nbsp;a&nbsp;new&nbsp;radial&nbsp;basis&nbsp;network.
+</font><br></p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;larger&nbsp;that&nbsp;SPREAD&nbsp;is&nbsp;the&nbsp;smoother&nbsp;the&nbsp;function&nbsp;approximation
+</font><br>&nbsp; will be.  Too large a spread means a lot of neurons will be&nbsp; required to fit a fast changing function.  Too small a spread<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;means&nbsp;many&nbsp;neurons&nbsp;will&nbsp;be&nbsp;required&nbsp;to&nbsp;fit&nbsp;a&nbsp;smooth&nbsp;function,
+</font><br>&nbsp; and the network may not generalize well.  Call<font face="Courier" size="2"> NEWRB </font>with<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;different&nbsp;spreads&nbsp;to&nbsp;find&nbsp;the&nbsp;best&nbsp;value&nbsp;for&nbsp;a&nbsp;given&nbsp;problem.
+</font><br></p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;Here&nbsp;we&nbsp;design&nbsp;a&nbsp;radial&nbsp;basis&nbsp;network&nbsp;given&nbsp;inputs&nbsp;X&nbsp;and&nbsp;targets&nbsp;T.
+</font><br></p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X = [1 2 3];</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T = [2.0 4.1 5.9];</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;net = <a href="matlab:doc newrb">newrb</a>(X,T);</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Y = net(X)</font><br>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;See also SIM, NEWRBE, NEWGRNN, NEWPNN.</font><br>
+</p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

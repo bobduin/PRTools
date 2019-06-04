@@ -1,0 +1,29 @@
+%GT Mapping overload
+
+function c = gt(a,b)
+		prtrace(mfilename,2);
+sa = size(a);
+sb = size(b);
+if any(sa ~= sb)
+		error('Mappings should have equal size')
+end
+if ~isa(a,'mapping') 
+	c = le(b,a); 
+	return
+end
+
+% Now a is a mapping and b is a mapping or a double (array)
+
+	if isa(b,'double')
+		b = affine(b);
+	end
+	k = size(a,2);
+	w = dyadicm([],'gt',-1,getfeatsize(a));
+	w.size_in = 2*k;
+ 	if isuntrained(a)
+ 		w.mapping_type = 'combiner';
+ 	end
+	c = [a b]*w;
+	c.labels = a.labels;
+
+return

@@ -1,0 +1,43 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>cmapm</title></head>
+<p align="center"><font face="Courier" size=5><strong>CMAPM</strong></font></p>
+<h3> Compute some special fixed mappings
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;W = CMAPM(...)</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B = A*CMAPM(..)</font><br>
+</p>
+<p></p><p>
+<table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="100"><font size="4"><strong>Input</strong></font></td>&nbsp; Various, see below</td></tr></table>
+</p><p><table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="120"><font size="4"><strong>Output</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;W</font></td><td valign="baseline"><font face="Courier" size="2">   </font>Mapping<tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;B</font></td><td valign="baseline"><font face="Courier" size="2">   </font>Dataset</td></tr></table>
+</p><h3> Description</h3><p><font face="Courier" size="2"> CMAPM </font>computes some special data-independent maps for scaling, selecting or&nbsp; rotating<font face="Courier" size="2"> K-</font>dimensional feature spaces.</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;W&nbsp;=&nbsp;CMAPM(K,N)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Selects&nbsp;the&nbsp;features&nbsp;listed&nbsp;in&nbsp;the&nbsp;vector&nbsp;N
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Deprecated,&nbsp;use&nbsp;FEATSEL(K,N)
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;W&nbsp;=&nbsp;CMAPM(K,P)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Polynomial&nbsp;feature&nbsp;map.&nbsp;P&nbsp;should&nbsp;be&nbsp;an&nbsp;N*K&nbsp;matrix
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;in&nbsp;which&nbsp;each&nbsp;row&nbsp;defines&nbsp;the&nbsp;exponents&nbsp;for&nbsp;the
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;original&nbsp;features&nbsp;in&nbsp;a&nbsp;polynomial&nbsp;term.&nbsp;Note:&nbsp;for
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N&nbsp;=&nbsp;1&nbsp;and/or&nbsp;K&nbsp;=&nbsp;1,&nbsp;feature&nbsp;selection&nbsp;is&nbsp;applied!
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;W&nbsp;=&nbsp;CMAPM(K,'EXP')&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exponential&nbsp;mapping.&nbsp;
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Deprecated,&nbsp;use&nbsp;MAPM('EXP')
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;W&nbsp;=&nbsp;CMAPM(K,'NEXP')&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Negative&nbsp;exponential&nbsp;mapping.
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Deprecated,&nbsp;use&nbsp;MAPM('NEXP')
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;W&nbsp;=&nbsp;CMAPM(K,'LOG')&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Logarithmic&nbsp;mapping.
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Deprecated,&nbsp;use&nbsp;MAPM('LOG')
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;W&nbsp;=&nbsp;CMAPM(K,'RANDROT')&nbsp;&nbsp;&nbsp;&nbsp;Defines&nbsp;a&nbsp;random&nbsp;K-dimensional&nbsp;rotation.
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;W&nbsp;=&nbsp;CMAPM(F,'ROT')&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;N*K&nbsp;matrix&nbsp;F&nbsp;defines&nbsp;N&nbsp;linear&nbsp;combinations&nbsp;
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to&nbsp;be&nbsp;computed&nbsp;by&nbsp;X*F'.
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;W&nbsp;=&nbsp;CMAPM(X,'SHIFT')&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Defines&nbsp;a&nbsp;shift&nbsp;of&nbsp;the&nbsp;origin&nbsp;by&nbsp;X.
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;W&nbsp;=&nbsp;CMAPM(S,'SCALE')&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Divides&nbsp;the&nbsp;features&nbsp;by&nbsp;the&nbsp;components&nbsp;of&nbsp;the&nbsp;
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vector&nbsp;S.
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;W&nbsp;=&nbsp;CMAPM({X,S},'SCALE')&nbsp;&nbsp;Shift&nbsp;by&nbsp;X&nbsp;and&nbsp;scale&nbsp;by&nbsp;S.
+</font><br></p><h3> Example(s)</h3><p>
+<font face="Courier" size="2">&nbsp;For&nbsp;the&nbsp;polynomial&nbsp;feature&nbsp;map,&nbsp;CMAPM(K,P),&nbsp;P&nbsp;defines&nbsp;exponents&nbsp;for&nbsp;each
+</font><br><font face="Courier" size="2">&nbsp;feature.&nbsp;So&nbsp;P&nbsp;=&nbsp;[1&nbsp;0;&nbsp;0&nbsp;1;&nbsp;1&nbsp;1;&nbsp;2&nbsp;0;&nbsp;0&nbsp;2;&nbsp;3&nbsp;0;&nbsp;0&nbsp;3]&nbsp;defines&nbsp;7&nbsp;features,
+</font><br><font face="Courier" size="2">&nbsp;the&nbsp;original&nbsp;2&nbsp;(e.g.&nbsp;x&nbsp;and&nbsp;y),&nbsp;a&nbsp;mixture&nbsp;(xy)&nbsp;and&nbsp;all&nbsp;powers&nbsp;of&nbsp;the&nbsp;second
+</font><br><font face="Courier" size="2">&nbsp;(x^2,y^2)&nbsp;and&nbsp;third&nbsp;(x^3,y^3)&nbsp;order.&nbsp;Another&nbsp;example&nbsp;is&nbsp;P&nbsp;=&nbsp;diag([0.5&nbsp;0.5
+</font><br><font face="Courier" size="2">&nbsp;0.5]),&nbsp;defining&nbsp;3&nbsp;features&nbsp;to&nbsp;be&nbsp;the&nbsp;square&nbsp;roots&nbsp;of&nbsp;the&nbsp;original&nbsp;ones.
+</font><br></p>
+<p><font face="Courier" size="2">&nbsp;Note&nbsp;that&nbsp;this&nbsp;is&nbsp;an&nbsp;old,&nbsp;complicated&nbsp;routine.&nbsp;For&nbsp;various&nbsp;options&nbsp;more
+</font><br><font face="Courier" size="2">&nbsp;logical&nbsp;alternatives&nbsp;are&nbsp;available,&nbsp;e.g.&nbsp;using&nbsp;FEATSEL,&nbsp;FILTM&nbsp;or&nbsp;MAPM.
+</font><br></p><h3> See also</h3><p>
+<font face="Courier" size="3"><a href="../prtools/mappings.html">mappings</a>, <a href="../prtools/scalem.html">scalem</a>, <a href="../prtools/featselm.html">featselm</a>, <a href="../prtools/klm.html">klm</a>, </font></p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

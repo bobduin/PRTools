@@ -1,0 +1,11 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>getcost</title></head>
+<p align="center"><font face="Courier" size=5><strong>GETCOST</strong></font></p>
+<h3> Get classification cost matrix
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;[COST,LABLIST] = GETCOST(A)</font><br>
+</p>
+<p> Returns the classification cost matrix as defined for the dataset<font face="Courier" size="2"> A</font>.&nbsp; An empty cost matrix is interpreted as equal costs for misclassification.&nbsp; In that case<font face="Courier" size="2"> COST = ONES(C+1) -</font><font face="Courier" size="2"> EYE(C+1) </font>is returned, if<font face="Courier" size="2"> C </font>is the number&nbsp; of classes. Row<font face="Courier" size="2"> C+1 </font>and column<font face="Courier" size="2"> C+1 </font>in<font face="Courier" size="2"> COST </font>refer to unlabeld objects.&nbsp; In<font face="Courier" size="2"> LABLIST </font>the class labels are returned.</p>
+<p> If<font face="Courier" size="2"> A </font>has target labels an error is returned as in that case no classes&nbsp; and thereby no costs are defined.</p>
+<p> See<font face="Courier" size="2"> DATASETS </font></p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

@@ -1,0 +1,15 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>mds_stress</title></head>
+<p align="center"><font face="Courier" size=5><strong>MDS_STRESS</strong></font></p>
+<h3> - Sammon stress between dissimilarity matrices
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;E = MDS_STRESS(Q,DS,D)</font><br>
+</p>
+<p></p><p>
+<table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="100"><font size="4"><strong>Input</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;Q</font></td><td valign="baseline"><font face="Courier" size="2">           </font>Indicator of the Sammon stress;<font face="Courier" size="2"> Q = -</font>2,-1<font face="Courier" size="2">,0,1,2 </font><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;DS</font></td><td valign="baseline"><font face="Courier" size="2">         </font>Original distance matrix<tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;D</font></td><td valign="baseline"><font face="Courier" size="2">          </font>Approximated distance matrix</td></tr></table>
+</p><p><table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="120"><font size="4"><strong>Output</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;E</font></td><td valign="baseline"><font face="Courier" size="2">          </font>Sammon stress</td></tr></table>
+</p><h3> Description</h3><p> Computes the Sammon stress between the original distance matrix Ds&nbsp; and the approximated distance matrix<font face="Courier" size="2"> D</font>, expressed as follows<br></p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;E&nbsp;=&nbsp;1/(sum_{i&ltj}&nbsp;DS_{ij}^(q+2))&nbsp;sum_{i&ltj}&nbsp;(DS_{ij}&nbsp;-&nbsp;D_{ij})^2&nbsp;*&nbsp;DS_{ij}^q
+</font><br></p>
+<p></p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

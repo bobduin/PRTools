@@ -1,0 +1,23 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>naivebc</title></head>
+<p align="center"><font face="Courier" size=5><strong>NAIVEBC</strong></font></p>
+<h3> Naive Bayes classifier
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;W = NAIVEBC(A,N)</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;W = A*NAIVEBC([],N)</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;W = A*NAIVEBC(N)</font><br>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;W = NAIVEBC(A,DENSMAP)</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;W = A*NAIVEBC([],DENSMAP)</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;W = A*NAIVEBC(DENSMAP)</font><br>
+</p>
+<p></p><p>
+<table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="100"><font size="4"><strong>Input</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;A</font></td><td valign="baseline"><font face="Courier" size="2">        </font>Training dataset<tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;N</font></td><td valign="baseline"><font face="Courier" size="2">        </font>Scalar number of bins (default:<font face="Courier" size="2"> 10) </font><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;DENSMAP</font></td><td valign="baseline">  Untrained mapping for density estimation</td></tr></table>
+</p><p><table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="120"><font size="4"><strong>Output</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;W</font></td><td valign="baseline"><font face="Courier" size="2">        </font>Naive Bayes classifier mapping</td></tr></table>
+</p><h3> Description</h3><p> The Naive Bayes Classifier estimates for every class and every feature&nbsp; separately. Total class densities are constructed by assuming&nbsp; independency and consequently multiplying the separate feature densities.</p>
+<p> The default version divides each axis into<font face="Courier" size="2"> N </font>bins, counts the number of&nbsp; training examples for each of the classes in each of the bins, and&nbsp; classifies the object to the class that gives maximum posterior&nbsp; probability. Missing values will be put into a separate bin.</p>
+<p> This routine assumes continuous data. It may be applied to discrete data&nbsp; in case all features have the same number of discrete values. For proper&nbsp; results the parameter<font face="Courier" size="2"> N </font>should be set to this number.</p>
+<p> If<font face="Courier" size="2"> N </font>is <font face="Courier" size="2">NaN</font> it is optimised by<font face="Courier" size="2"> REGOPTC</font>.</p>
+<p> Alternatively an untrained mapping<font face="Courier" size="2"> DENSMAP </font>may be supplied that will be&nbsp; used to estimate the densities per class and per features separately.&nbsp; Examples are<font face="Courier" size="2"> PARZENM </font>and<font face="Courier" size="2"> GAUSSM</font>. See also<font face="Courier" size="2"> UDC</font>.</p><h3> See also</h3><p>
+<font face="Courier" size="3"><a href="../prtools/datasets.html">datasets</a>, <a href="../prtools/mappings.html">mappings</a>, <a href="../prtools/parzenm.html">parzenm</a>, <a href="../prtools/gaussm.html">gaussm</a>, <a href="../prtools/udc.html">udc</a>, <a href="../prtools/qdc.html">qdc</a>, <a href="../prtools/parzenc.html">parzenc</a>, <a href="../prtools/parzendc.html">parzendc</a>, </font><font face="Courier" size="3"><a href="../prtools/regoptc.html">regoptc</a>, <a href="../prtools/udc.html">udc</a>, </font></p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

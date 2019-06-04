@@ -1,0 +1,24 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>im_fft</title></head>
+<p align="center"><font face="Courier" size=5><strong>IM_FFT</strong></font></p>
+<h3> Fixed mapping for 2D FFT
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;F = IM_FFT(A,POST1,POST2,...)</font><br>
+&nbsp;<font face="Courier" size="2"> F = A*IM_FFT([],POST1,POST2,...) </font><font face="Courier" size="2"> F = A*IM_FFT(POST1,POST2,...) </font></p>
+<p></p><p>
+<table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="100"><font size="4"><strong>Input</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;A</font></td><td valign="baseline"><font face="Courier" size="2">         </font>Dataset with object images (possibly multi-band)</td></tr></table>
+</p><p><table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="120"><font size="4"><strong>Output</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;F</font></td><td valign="baseline"><font face="Courier" size="2">         </font>Dataset with<font face="Courier" size="2"> FFT </font>images<tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;POST1</font></td><td valign="baseline"><font face="Courier" size="2">     </font>Characterstring defining postprocessing by<font face="Courier" size="2"> FILTIM </font><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;POST2</font></td><td valign="baseline"><font face="Courier" size="2">     </font>Characterstring defining more postprocessing by<font face="Courier" size="2"> FILTIM </font></td></tr></table>
+</p><h3> Description</h3><p> This routine applies the<font face="Courier" size="2"> 2D FFT2 </font>routine to all images in<font face="Courier" size="2"> A</font>. The result&nbsp; is complex. See the below example for post processing by<font face="Courier" size="2"> FILTIM</font>. It shows&nbsp; how it can be integrated in the call to<font face="Courier" size="2"> IM_FFT</font>.</p><h3> Example(s)</h3><p>
+<font face="Courier" size="2">&nbsp;delfigs
+</font><br><font face="Courier" size="2">&nbsp;prdatafiles;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%&nbsp;make&nbsp;sure&nbsp;PRDATAFILES&nbsp;is&nbsp;in&nbsp;the&nbsp;path
+</font><br><font face="Courier" size="2">&nbsp;a&nbsp;=&nbsp;delft_idb;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%&nbsp;load&nbsp;the&nbsp;Delft&nbsp;Image&nbsp;DataBase
+</font><br><font face="Courier" size="2">&nbsp;x&nbsp;=&nbsp;a*gendat(4);&nbsp;&nbsp;&nbsp;&nbsp;%&nbsp;load&nbsp;a&nbsp;subset&nbsp;of&nbsp;4&nbsp;images
+</font><br><font face="Courier" size="2">&nbsp;%&nbsp;show&nbsp;the&nbsp;centralized&nbsp;log&nbsp;of&nbsp;the&nbsp;powerspectra&nbsp;of&nbsp;the&nbsp;gray&nbsp;images
+</font><br><font face="Courier" size="2">&nbsp;show(x*im_gray*im_fft*filtim('abs')*filtim('fftshift')*filtim('log'));
+</font><br><font face="Courier" size="2">&nbsp;%&nbsp;post-processing&nbsp;can&nbsp;be&nbsp;included&nbsp;in&nbsp;im_fft
+</font><br><font face="Courier" size="2">&nbsp;figure;&nbsp;show(x*im_gray*im_fft('abs','fftshift','log'));
+</font><br><font face="Courier" size="2">&nbsp;figure;&nbsp;show(x);&nbsp;&nbsp;&nbsp;&nbsp;%&nbsp;show&nbsp;the&nbsp;originals
+</font><br><font face="Courier" size="2">&nbsp;showfigs
+</font><br></p><h3> See also</h3><p>
+<font face="Courier" size="3"><a href="../prtools/datasets.html">datasets</a>, <a href="../prtools/datafiles.html">datafiles</a>, fft2, <a href="../prtools/filtim.html">filtim</a>, </font></p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

@@ -1,0 +1,20 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>prdatafiles</title></head>
+<p align="center"><font face="Courier" size=5><strong>PRDATAFILES</strong></font></p>
+<h3> Checks availability of a PRTools datafile (PRTools5 version!)
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;PRDATAFILES</font><br>
+</p>
+<p> Checks the availability of the<font face="Courier" size="2"> PRDATAFILES </font>directory, downloads the&nbsp; Contents file and m-files if necessary and adds it to the search path.&nbsp; Lists Contents file.</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;PRDATAFILES ALL</font><br>
+</p>
+<p> Download and save all data related to the m-files (very time consuming!)</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A = PRDATAFILES(DFILE)</font><br>
+</p>
+<p> Checks the availability of the particular datafile<font face="Courier" size="2"> DFILE. DFILE </font>should be&nbsp; the name of the m-file. If it does not exist in the 'prdatafiles'&nbsp; directory an attempt is made to download it from the PRTools web site.&nbsp; It is returned in<font face="Courier" size="2"> A </font>and the<font face="Courier" size="2"> PRDATAFILES </font>directory is added to the path.</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;PRDATAFILES(DFILEDIR,SIZE,URL)</font><br>
+</p>
+<p> This command should be used inside a<font face="Courier" size="2"> PRDATAFILES </font>m-file. It checks the&nbsp; availability of the particular datafile directory<font face="Courier" size="2"> DFILEDIR </font>and downloads&nbsp; it if needed.<font face="Courier" size="2"> SIZE </font>is the size of the datafile in Mbyte, just used to&nbsp; inform the user. In<font face="Courier" size="2"> URL </font>the web location may be supplied. Default is&nbsp; http://prtools.tudelft.nl/prdatafiles/DFILEDIR.zip</p>
+<p> All downloading is done interactively and should be approved by the user.</p><h3> See also</h3><p>
+<font face="Courier" size="3"><a href="../prtools/datafiles.html">datafiles</a>, <a href="../prtools/prdatasets.html">prdatasets</a>, <a href="../prtools/prdownload.html">prdownload</a>, </font></p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

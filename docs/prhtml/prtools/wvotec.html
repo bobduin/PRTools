@@ -1,0 +1,16 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>wvotec</title></head>
+<p align="center"><font face="Courier" size=5><strong>WVOTEC</strong></font></p>
+<h3> Weighted combiner (Adaboost weights)
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="2"> W = WVOTEC(A,V)   </font>compute weigths and store&nbsp;<font face="Courier" size="2"> W = WVOTEC(V,U)   </font>Construct weighted combiner using weights<font face="Courier" size="2"> U </font></p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;INPUT</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A      Labeled dataset</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V      Parallel or stacked set of trained classifiers</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;U      Set of classifier weights</font><br>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;OUTPUT</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;W      Combined classifier</font><br>
+</p><h3> Description</h3><p> The set of trained classifiers<font face="Courier" size="2"> V </font>is combined using weighted&nbsp; majority voting. If given the weights<font face="Courier" size="2"> U </font>are used. If not&nbsp; given, the weights are computed from the classification&nbsp; results of the labeled dataset<font face="Courier" size="2"> A </font>using<font face="Courier" size="2"> 0</font>.5*log<font face="Courier" size="2">((1-</font>E)/E)&nbsp; if<font face="Courier" size="2"> E </font>is the classifier error.</p><h3> See also</h3><p>
+<font face="Courier" size="3"><a href="../prtools/mappings.html">mappings</a>, <a href="../prtools/datasets.html">datasets</a>, </font></p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

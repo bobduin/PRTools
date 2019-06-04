@@ -1,0 +1,21 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>mds_init</title></head>
+<p align="center"><font face="Courier" size=5><strong>MDS_INIT</strong></font></p>
+<h3> Initialisation for MDS (variants of Sammon) mapping
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;Y = MDS_INIT (D,N,INIT)</font><br>
+</p>
+<p></p><p>
+<table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="100"><font size="4"><strong>Input</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;D</font></td><td valign="baseline"><font face="Courier" size="2">      </font>Square dissimilarity matrix of the size<font face="Courier" size="2"> M </font>x<font face="Courier" size="2"> M </font><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;N</font></td><td valign="baseline"><font face="Courier" size="2">      </font>Desired output dimensionality (optional; default:<font face="Courier" size="2"> 2) </font><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;INIT</font></td><td valign="baseline"><font face="Courier" size="2">   </font>Initialisation method (optional; default: 'randnp')</td></tr></table>
+</p><p><table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="120"><font size="4"><strong>Output</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;Y</font></td><td valign="baseline"><font face="Courier" size="2">      </font>Initial configuration for the<font face="Courier" size="2"> MDS </font>method</td></tr></table>
+</p><h3> Description</h3><p> Finds a configuration of points<font face="Courier" size="2"> Y </font>in an<font face="Courier" size="2"> N-</font>dimensional space, used as&nbsp; a starting configuration for an<font face="Courier" size="2"> MDS </font>mapping based on the distance matrix<font face="Courier" size="2"> D</font>.&nbsp; The parameter<font face="Courier" size="2"> INIT </font>is a string standing for the initialisation method<br></p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;'randp'&nbsp;&nbsp;-&nbsp;linear&nbsp;mapping&nbsp;of&nbsp;D&nbsp;on&nbsp;n&nbsp;randomly&nbsp;(uniform&nbsp;distribution)&nbsp;chosen&nbsp;vectors
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;'randnp'&nbsp;-&nbsp;linear&nbsp;mapping&nbsp;of&nbsp;D&nbsp;on&nbsp;n&nbsp;randomly&nbsp;(normal&nbsp;distribution)&nbsp;chosen&nbsp;vectors
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;'randv'&nbsp;&nbsp;-&nbsp;randomly&nbsp;(uniform&nbsp;distribution)&nbsp;chosen&nbsp;vectors&nbsp;from&nbsp;D
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;'maxv'&nbsp;&nbsp;&nbsp;-&nbsp;n&nbsp;columns&nbsp;of&nbsp;D&nbsp;with&nbsp;the&nbsp;largest&nbsp;variances
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;'kl'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Karhunen&nbsp;Loeve&nbsp;projection&nbsp;(linear&nbsp;mapping)&nbsp;of&nbsp;D&nbsp;(first&nbsp;n&nbsp;eigenvectors)
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;'cs'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Classical&nbsp;Scaling
+</font><br></p><h3> See also</h3><p>
+<font face="Courier" size="3"><a href="../prtools/mappings.html">mappings</a>, <a href="../prtools/mds_cs.html">mds_cs</a>, <a href="../prtools/mds.html">mds</a>, </font></p>
+<p></p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

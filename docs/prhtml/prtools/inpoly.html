@@ -1,0 +1,23 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>inpoly</title></head>
+<p align="center"><font face="Courier" size=5><strong>INPOLY</strong></font></p>
+<h3> Select dataset objects inside / outside a polygon in a scatter plot
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;[JIN,JOUT] = INPOLY(A,H)</font><br>
+</p>
+<p></p><p>
+<table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="100"><font size="4"><strong>Input</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;A</font></td><td valign="baseline"><font face="Courier" size="2">      2D </font>dataset<tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;H</font></td><td valign="baseline"><font face="Courier" size="2">      </font>handle returned by<font face="Courier" size="2"> IMPOLY </font></td></tr></table>
+</p><p><table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="120"><font size="4"><strong>Output</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;JIN</font></td><td valign="baseline"><font face="Courier" size="2">    </font>Object indices of<font face="Courier" size="2"> A </font>inside polygon<tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;JOUT</font></td><td valign="baseline"><font face="Courier" size="2">   </font>Object indices of<font face="Courier" size="2"> A </font>outside polygon</td></tr></table>
+</p><h3> Description</h3><p> The purpose of this routine is to find the objects inside<font face="Courier" size="2"> / </font>outside&nbsp; a polygon created by<font face="Courier" size="2"> IMPOLY </font>on a scatterplot, e.g. created by<font face="Courier" size="2"> SCATTERD</font>.</p><h3> Example(s)</h3><p>
+<font face="Courier" size="2">&nbsp;delfigs
+</font><br><font face="Courier" size="2">&nbsp;a&nbsp;=&nbsp;gendatb;
+</font><br><font face="Courier" size="2">&nbsp;scatterd(a)
+</font><br><font face="Courier" size="2">&nbsp;disp('Draw&nbsp;a&nbsp;polygon&nbsp;in&nbsp;the&nbsp;scatterplot')
+</font><br><font face="Courier" size="2">&nbsp;h&nbsp;=&nbsp;impoly;&nbsp;&nbsp;%&nbsp;use&nbsp;the&nbsp;mouse&nbsp;to&nbsp;draw&nbsp;a&nbsp;polygon&nbsp;in&nbsp;the&nbsp;scatterplot
+</font><br><font face="Courier" size="2">&nbsp;[jin,jout]&nbsp;=&nbsp;inpoly(a,h);
+</font><br><font face="Courier" size="2">&nbsp;hold&nbsp;on;&nbsp;scatterd(a(jin,:),'ko');&nbsp;%&nbsp;encircle&nbsp;selected&nbsp;objects
+</font><br><font face="Courier" size="2">&nbsp;figure;&nbsp;&nbsp;scatterd(a(jout,:));&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%&nbsp;show&nbsp;objects&nbsp;outside&nbsp;polygon
+</font><br><font face="Courier" size="2">&nbsp;showfigs
+</font><br></p><h3> See also</h3><p>
+<font face="Courier" size="3"><a href="../prtools/scatterd.html">scatterd</a>, impoly, </font></p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

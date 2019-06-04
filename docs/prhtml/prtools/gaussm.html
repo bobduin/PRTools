@@ -1,0 +1,25 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>gaussm</title></head>
+<p align="center"><font face="Courier" size=5><strong>GAUSSM</strong></font></p>
+<h3> Trainable mapping, mixture of Gaussians (MoG) density estimate
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;W = GAUSSM(A,K,R,S,M)</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;W = A*GAUSSM([],K,R,S,M)</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;W = A*GAUSSM(K,R,S,M)</font><br>
+</p>
+<p></p><p>
+<table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="100"><font size="4"><strong>Input</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;A</font></td><td valign="baseline"><font face="Courier" size="2">      </font>Dataset<tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;K</font></td><td valign="baseline"><font face="Courier" size="2">      </font>Number of Gaussians per class<tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;R,S,M</font></td><td valign="baseline">  Regularisation parameters<font face="Courier" size="2">, 0 <= R,S <= 1</font>, see<font face="Courier" size="2"> QDC </font></td></tr></table>
+</p><p><table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="120"><font size="4"><strong>Output</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;W</font></td><td valign="baseline"><font face="Courier" size="2">      </font>Mixture of Gaussians density estimate</td></tr></table>
+</p><h3> Description</h3><p> Estimation of a<font face="Courier" size="2"> PDF </font>by the dataset<font face="Courier" size="2"> A </font>by a mixture of Gaussians procedure.&nbsp; Use is made of<font face="Courier" size="2"> EMCLUST(A,QDC,K)</font>. Unlabeled objects are neglected, unless&nbsp;<font face="Courier" size="2"> A </font>is entirely unlabeled or double. Then all objects are used. If<font face="Courier" size="2"> A </font>is a&nbsp; multi-class crisp labeled dataset the densities are estimated class by&nbsp; class and then weighted and combined according their prior probabilities.&nbsp; Use<font face="Courier" size="2"> +A </font>instead of<font face="Courier" size="2"> A </font>to obtain a single set of Gaussians. In all cases,&nbsp; just single density estimator<font face="Courier" size="2"> W </font>is returned.</p>
+<p> Note that it is necessary to set the label type of<font face="Courier" size="2"> A </font>to soft labels&nbsp;<font face="Courier" size="2"> (A = LABTYPE(A</font>,'soft') in order to use the traditional<font face="Courier" size="2"> EM </font>algorithm&nbsp; based on posterior probabilities instead of using crisp labels.</p>
+<p> The mapping<font face="Courier" size="2"> W </font>may be applied to a new dataset<font face="Courier" size="2"> B </font>using<font face="Courier" size="2"> DENSITY = B*W</font>.</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;W = A*GAUSSM</font><br>
+</p>
+<p> uses a single Gaussian per class<font face="Courier" size="2"> (K=1) </font>and no regularisation. If&nbsp; regulariisation is desired, also<font face="Courier" size="2"> K </font>should be supplied.</p><h3> Example(s)</h3><p>
+<font face="Courier" size="2">&nbsp;a&nbsp;=&nbsp;gendatb;
+</font><br><font face="Courier" size="2">&nbsp;w&nbsp;=&nbsp;a*gaussm(2);
+</font><br><font face="Courier" size="2">&nbsp;scatterd(a)
+</font><br><font face="Courier" size="2">&nbsp;plotm(w)
+</font><br></p><h3> See also</h3><p>
+<font face="Courier" size="3"><a href="../prtools/datasets.html">datasets</a>, <a href="../prtools/mappings.html">mappings</a>, <a href="../prtools/qdc.html">qdc</a>, <a href="../prtools/mogc.html">mogc</a>, <a href="../prtools/emclust.html">emclust</a>, <a href="../prtools/plotm.html">plotm</a>, <a href="../prtools/testc.html">testc</a>, </font></p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

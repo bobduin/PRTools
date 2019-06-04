@@ -1,0 +1,15 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>rejectm</title></head>
+<p align="center"><font face="Courier" size=5><strong>REJECTM</strong></font></p>
+<h3> Trainable mapping to compute rejection threshold
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;W = REJECTM(A,FRAC)</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;W = A*REJECTM([],FRAC)</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;W = A*REJECTM(FRAC)</font><br>
+</p><h3> Description</h3><p> Train the threshold of a rejection mapping<font face="Courier" size="2"> W </font>such that a fraction<font face="Courier" size="2"> FRAC </font> of the training data<font face="Courier" size="2"> A </font>is rejected. Dataset<font face="Courier" size="2"> A </font>is usually the output of&nbsp; a classifier. The mapping<font face="Courier" size="2"> REJECTM </font>will add one extra reject class.</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;W = REJECTM(A,FRAC,REJNAME)</font><br>
+</p>
+<p> If desired, the rejected objects will be labeled<font face="Courier" size="2"> REJNAME</font>. Default is&nbsp;<font face="Courier" size="2"> REJNAME = </font>'reject'.</p><h3> Example(s)</h3><p> a<font face="Courier" size="2"> = </font>gendatb;<font face="Courier" size="2">              </font>% create trainingset&nbsp; w<font face="Courier" size="2"> = </font>ldc(a);<font face="Courier" size="2">               </font>% create supervised classifier&nbsp; wr<font face="Courier" size="2"> = </font>rejectm(a*w<font face="Courier" size="2">,0.05);   </font>% reject 5% of the data<font face="Courier" size="2">&nbsp;&nbsp;scatterd(a);&nbsp;plotc(w*wr);&nbsp;%&nbsp;show
+</font><br></p><h3> See also</h3><p>
+<font face="Courier" size="3"><a href="../prtools/reject.html">reject</a>, <a href="../prtools/prroc.html">prroc</a>, <a href="../prtools/plote.html">plote</a>, </font></p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

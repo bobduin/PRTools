@@ -1,0 +1,106 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>dtc</title></head>
+<p align="center"><font face="Courier" size=5><strong>DTC</strong></font></p>
+<h3> Verzakov Tree - Trainable Decision Tree Classifier
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;W = DTC(A, CRIT, CHISQSTOPVAL, PRUNE, T, NFEAT)</font><br>
+</p>
+<p></p><p>
+<table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="100"><font size="4"><strong>Input</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;A</font></td><td valign="baseline"><font face="Courier" size="2">        </font>Training dataset.</td></tr></table>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Object&nbsp;weights&nbsp;and&nbsp;class&nbsp;priors:
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;It&nbsp;is&nbsp;possible&nbsp;to&nbsp;assign&nbsp;individual&nbsp;weights&nbsp;to&nbsp;dataset
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;objects&nbsp;by&nbsp;using&nbsp;'weights'&nbsp;identifier:
+</font><br></p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;=&nbsp;SETIDENT(A,&nbsp;WEIGHTS,&nbsp;'weights')
+</font><br></p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;weights&nbsp;are&nbsp;not&nbsp;defined&nbsp;they&nbsp;assumed&nbsp;to&nbsp;be&nbsp;equal&nbsp;to&nbsp;1&nbsp;for
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;all&nbsp;objects.&nbsp;The&nbsp;actual&nbsp;weights&nbsp;used&nbsp;by&nbsp;the&nbsp;training&nbsp;routine
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;are&nbsp;computed&nbsp;by&nbsp;using&nbsp;supplied&nbsp;weights&nbsp;along&nbsp;with&nbsp;the&nbsp;class&nbsp;
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;priors&nbsp;(if&nbsp;priors&nbsp;are&nbsp;not&nbsp;set&nbsp;then&nbsp;the&nbsp;apparent&nbsp;priors&nbsp;are&nbsp;used):
+</font><br></p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ACTUAL_WEIGHTS(I)&nbsp;=&nbsp;M*(WEIGHTS(I)/CW(C))*(PRIOR(C)/SUM(PRIOR))
+</font><br></p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;where&nbsp;M&nbsp;is&nbsp;the&nbsp;total&nbsp;amount&nbsp;of&nbsp;(labelled)&nbsp;objects&nbsp;in&nbsp;A,&nbsp;
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CW&nbsp;is&nbsp;the&nbsp;vector&nbsp;weights&nbsp;sums&nbsp;for&nbsp;each&nbsp;class,&nbsp;and&nbsp;C&nbsp;is
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;class&nbsp;of&nbsp;the&nbsp;object&nbsp;I.&nbsp;The&nbsp;sum&nbsp;of&nbsp;all&nbsp;actual&nbsp;weights&nbsp;is&nbsp;M.
+</font><br></p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Feature&nbsp;types:
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Features&nbsp;are&nbsp;treated&nbsp;differently&nbsp;based&nbsp;on&nbsp;their&nbsp;domain&nbsp;information.
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;the&nbsp;feature&nbsp;domain&nbsp;is&nbsp;empty&nbsp;or&nbsp;is&nbsp;a&nbsp;collection&nbsp;of&nbsp;intervals&nbsp;&nbsp;
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;then&nbsp;this&nbsp;feature&nbsp;is&nbsp;considered&nbsp;to&nbsp;be&nbsp;the&nbsp;continuous&nbsp;one&nbsp;and
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;branches&nbsp;are&nbsp;created&nbsp;by&nbsp;splitting&nbsp;at&nbsp;the&nbsp;threshold&nbsp;value.
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Otherwise&nbsp;(feature&nbsp;domain&nbsp;specifies&nbsp;a&nbsp;set&nbsp;of&nbsp;values&nbsp;or&nbsp;a&nbsp;set
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;of&nbsp;names),&nbsp;the&nbsp;feature&nbsp;is&nbsp;considered&nbsp;to&nbsp;be&nbsp;the&nbsp;nominal&nbsp;one
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and&nbsp;branches&nbsp;corresponding&nbsp;to&nbsp;all&nbsp;present&nbsp;feature&nbsp;values&nbsp;are
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;created.
+</font><br></p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unknown&nbsp;and&nbsp;'non-applicable'&nbsp;values:
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;the&nbsp;feature&nbsp;value&nbsp;is&nbsp;NaN&nbsp;then&nbsp;it&nbsp;is&nbsp;assumed&nbsp;that&nbsp;its&nbsp;value
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;is&nbsp;unknown.&nbsp;In&nbsp;such&nbsp;a&nbsp;situation&nbsp;the&nbsp;object&nbsp;with&nbsp;unknown&nbsp;value
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;is&nbsp;split&nbsp;into&nbsp;fractions&nbsp;and&nbsp;sent&nbsp;down&nbsp;all&nbsp;branches.
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;concept&nbsp;of&nbsp;the&nbsp;'non-applicable'&nbsp;feature&nbsp;value&nbsp;is&nbsp;different
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;the&nbsp;concept&nbsp;of&nbsp;the&nbsp;unknown&nbsp;(missing)&nbsp;value.&nbsp;
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;'non-applicable'&nbsp;values&nbsp;for&nbsp;the&nbsp;continues&nbsp;features&nbsp;are
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;encoded&nbsp;as&nbsp;INF.&nbsp;If&nbsp;feature&nbsp;domain&nbsp;is&nbsp;the&nbsp;(set&nbsp;of)&nbsp;interval(s),&nbsp;
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;then&nbsp;INF&nbsp;value&nbsp;has&nbsp;to&nbsp;be&nbsp;explicitly&nbsp;added&nbsp;to&nbsp;the&nbsp;domain
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;defintion.&nbsp;The&nbsp;'non-applicable'&nbsp;value&nbsp;of&nbsp;nominal&nbsp;features
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;does&nbsp;not&nbsp;have&nbsp;predefined&nbsp;encoding.&nbsp;If&nbsp;it&nbsp;is&nbsp;necessary&nbsp;user
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;have&nbsp;to&nbsp;include&nbsp;such&nbsp;value&nbsp;into&nbsp;domain&nbsp;definition.
+</font><br></p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CRIT&nbsp;&nbsp;&nbsp;Splitting&nbsp;citerion&nbsp;name.
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'igr'&nbsp;Information&nbsp;Gain&nbsp;Ratio&nbsp;(default):
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As&nbsp;defined&nbsp;by&nbsp;Quinlan.&nbsp;The&nbsp;penalty&nbsp;on&nbsp;the&nbsp;number&nbsp;of&nbsp;the&nbsp;distinct
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;values&nbsp;of&nbsp;the&nbsp;continues&nbsp;feature&nbsp;is&nbsp;used.&nbsp;If&nbsp;the&nbsp;gain&nbsp;is&nbsp;zero&nbsp;or
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;negative&nbsp;due&nbsp;to&nbsp;such&nbsp;penalisation,&nbsp;the&nbsp;split&nbsp;is&nbsp;not&nbsp;performed.
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;leads&nbsp;to&nbsp;smaller&nbsp;trees&nbsp;and&nbsp;may&nbsp;give&nbsp;non-zero&nbsp;training&nbsp;error.
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;criterion&nbsp;does&nbsp;not&nbsp;use&nbsp;costs.&nbsp;(Costs&nbsp;are&nbsp;used&nbsp;only&nbsp;at&nbsp;the&nbsp;
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;classification&nbsp;step).
+</font><br></p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'gini'&nbsp;Gini&nbsp;impurity&nbsp;index.&nbsp;More&nbsp;precisely,&nbsp;the&nbsp;change&nbsp;in&nbsp;this
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index.&nbsp;GINI&nbsp;index&nbsp;can&nbsp;be&nbsp;interpreted&nbsp;as&nbsp;a&nbsp;misclassification&nbsp;rate
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;the&nbsp;stochastic&nbsp;prior&nbsp;based&nbsp;classifier,&nbsp;so&nbsp;costs&nbsp;are&nbsp;
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;naturally&nbsp;embedded.&nbsp;If&nbsp;the&nbsp;change&nbsp;in&nbsp;the&nbsp;(absolute)&nbsp;error&nbsp;less&nbsp;
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;equal&nbsp;to&nbsp;0.1&nbsp;(change&nbsp;in&nbsp;the&nbsp;cost&nbsp;less&nbsp;or&nbsp;equal&nbsp;to&nbsp;0.1&nbsp;of
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;minimal&nbsp;absolute&nbsp;value&nbsp;of&nbsp;non-zero&nbsp;costs)&nbsp;the&nbsp;split&nbsp;is&nbsp;not&nbsp;
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;performed.&nbsp;This&nbsp;leads&nbsp;to&nbsp;smaller&nbsp;trees&nbsp;and&nbsp;may&nbsp;give&nbsp;non-zero
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;training&nbsp;error.
+</font><br></p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'miscls'&nbsp;Classification&nbsp;error&nbsp;criterion.
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To&nbsp;be&nbsp;used&nbsp;only&nbsp;for&nbsp;educational&nbsp;puposes&nbsp;because&nbsp;&nbsp;
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;it&nbsp;gives&nbsp;rather&nbsp;inferior&nbsp;results.&nbsp;Costs&nbsp;are&nbsp;naturally&nbsp;embedded.&nbsp;
+</font><br></p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CHISQSTOPVAL&nbsp;specificity&nbsp;=&nbsp;(1-significance&nbsp;level)&nbsp;of&nbsp;chi-squared&nbsp;test&nbsp;
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;on&nbsp;the&nbsp;difference&nbsp;between&nbsp;the&nbsp;original&nbsp;node&nbsp;class&nbsp;distribution&nbsp;
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and&nbsp;branches&nbsp;class&nbsp;distributions.&nbsp;The&nbsp;null&nbsp;hypothesis&nbsp;is&nbsp;that&nbsp;
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;distribution&nbsp;does&nbsp;not&nbsp;chage&nbsp;after&nbsp;the&nbsp;split&nbsp;(in&nbsp;other&nbsp;words:&nbsp;
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;class&nbsp;labels&nbsp;and&nbsp;splitting&nbsp;are&nbsp;independent).&nbsp;If&nbsp;null&nbsp;hypotesis&nbsp;
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;is&nbsp;accepted&nbsp;then&nbsp;splitting&nbsp;is&nbsp;stopped&nbsp;and&nbsp;current&nbsp;node&nbsp;becomes&nbsp;
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;leaf.&nbsp;CHISQSTOPVAL&nbsp;should&nbsp;be&nbsp;in&nbsp;the&nbsp;[0,&nbsp;1]&nbsp;range.&nbsp;
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E.g.,&nbsp;CHISQSTOPVAL&nbsp;=&nbsp;0.95&nbsp;means&nbsp;that&nbsp;significance&nbsp;level&nbsp;is&nbsp;5%&nbsp;
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and&nbsp;there&nbsp;is&nbsp;only&nbsp;5%&nbsp;chance&nbsp;of&nbsp;the&nbsp;incorrect&nbsp;rejection&nbsp;of&nbsp;the&nbsp;
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;null&nbsp;hypothesis&nbsp;that&nbsp;there&nbsp;is&nbsp;no&nbsp;change&nbsp;in&nbsp;class&nbsp;distribtion&nbsp;
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;after&nbsp;the&nbsp;split.&nbsp;(optional;&nbsp;default:&nbsp;0,&nbsp;which&nbsp;means&nbsp;that&nbsp;
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;branches&nbsp;will&nbsp;be&nbsp;discarded&nbsp;only&nbsp;if&nbsp;they&nbsp;bring&nbsp;no&nbsp;change&nbsp;in&nbsp;class
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;distribution)
+</font><br></p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRUNE&nbsp;&nbsp;Pruning&nbsp;type&nbsp;name
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'prunep'&nbsp;-&nbsp;pessimistic&nbsp;(top-down)&nbsp;pruning&nbsp;as&nbsp;defined&nbsp;by&nbsp;Quinlan.&nbsp;
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using&nbsp;'prunep'&nbsp;option&nbsp;while&nbsp;trainin&nbsp;a&nbsp;tree&nbsp;for&nbsp;a&nbsp;dataset&nbsp;with&nbsp;
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;defined&nbsp;cost&nbsp;matrix&nbsp;will&nbsp;cause&nbsp;an&nbsp;error.
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'prunet'&nbsp;-&nbsp;test&nbsp;set&nbsp;(bottom-up)&nbsp;pruning&nbsp;using&nbsp;the&nbsp;(required)
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dataset&nbsp;T.
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;These&nbsp;implementations&nbsp;of&nbsp;both&nbsp;pruning&nbsp;algorithms&nbsp;may&nbsp;be&nbsp;not
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exactly&nbsp;correct&nbsp;if&nbsp;there&nbsp;are&nbsp;unknown&nbsp;values&nbsp;in&nbsp;datastes.
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(optional;&nbsp;default:&nbsp;''&nbsp;--&nbsp;no&nbsp;prunning)
+</font><br></p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Test&nbsp;test&nbsp;for&nbsp;the&nbsp;test&nbsp;set&nbsp;pruning
+</font><br></p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NFEAT&nbsp;&nbsp;The&nbsp;number&nbsp;of&nbsp;features&nbsp;to&nbsp;be&nbsp;randomly&nbsp;selected&nbsp;to&nbsp;find&nbsp;a&nbsp;split
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at&nbsp;each&nbsp;node:&nbsp;to&nbsp;be&nbsp;used&nbsp;to&nbsp;created&nbsp;random&nbsp;forest.&nbsp;
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;NFEAT&nbsp;==&nbsp;[]&nbsp;then&nbsp;all&nbsp;available&nbsp;features&nbsp;will&nbsp;be&nbsp;used.&nbsp;
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(optional;&nbsp;default:&nbsp;[])
+</font><br></p>
+<p></p><p><table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="120"><font size="4"><strong>Output</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;W</font></td><td valign="baseline"><font face="Courier" size="2">       </font>Classifier mapping</td></tr></table>
+</p><h3> Description</h3><p> If (full grown) branches of (sub)tree do not improve classification&nbsp; error (misclassification cost) they are immediatley discarded.&nbsp; This may happen because we use regularised posteriors. As a result&nbsp; the algorithm is more stable, trees are smaller, but splits on&nbsp; the training set may be not perfect.</p><h3> Reference(s)</h3><p>[1] J.R. Quinlan, Simplifying Decision Trees, International Journal of&nbsp;Man-Machine Studies, 27(3), pp. 221-234, 1987.&nbsp;[2] J.R. Quinlan, Improved use of continuous attributes in C4.5. Journal&nbsp;of AI Research, 4(96), pp. 77-90, 1996.</p><h3> See also</h3><p>
+</p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

@@ -1,0 +1,20 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>mogc</title></head>
+<p align="center"><font face="Courier" size=5><strong>MOGC</strong></font></p>
+<h3> Trainable classifier based on Mixture of Gaussians
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;W = MOGC(A,N)</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;W = A*MOGC([],N,R,S);</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;W = A*MOGC(N,R,S);</font><br>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;INPUT</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A   Dataset</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N   Number of mixtures (optional; default 2)</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R,S Regularisation parameters, 0 <= R,S <= 1, see QDC</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;OUTPUT</font><br>
+</p><h3> Description</h3><p> For each class j in<font face="Courier" size="2"> A </font>a density estimate is made by<font face="Courier" size="2"> GAUSSM</font>, using N(j)&nbsp; mixture components. Using the class prior probabilities they are combined&nbsp; into a single classifier<font face="Courier" size="2"> W</font>. If<font face="Courier" size="2"> N </font>is a scalar, this number is applied to&nbsp; all classes. The relative size of the components is stored in<font face="Courier" size="2"> W.DATA.PRIOR</font>.</p>
+<p> For small class sizes or for large values of<font face="Courier" size="2"> N </font>it may be difficult or&nbsp; impossible to find the desired number of components. This may result in&nbsp; relatively long computing times.</p><h3> Example(s)</h3><p>
+<font face="Courier" size="2">&nbsp;PREX_DENSITY
+</font><br></p><h3> See also</h3><p>
+<font face="Courier" size="3"><a href="../prtools/datasets.html">datasets</a>, <a href="../prtools/mappings.html">mappings</a>, <a href="../prtools/qdc.html">qdc</a>, <a href="../prtools/plotm.html">plotm</a>, <a href="../prtools/testc.html">testc</a>, </font></p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

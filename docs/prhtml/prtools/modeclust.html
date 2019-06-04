@@ -1,0 +1,26 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>modeclust</title></head>
+<p align="center"><font face="Courier" size=5><strong>MODECLUST</strong></font></p>
+<h3> KNN mode-seeking clustering
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;LAB = MODECLUST(A,K)</font><br>
+</p>
+<p></p><p>
+<table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="100"><font size="4"><strong>Input</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;A</font></td><td valign="baseline"><font face="Courier" size="2">        </font>Dataset<tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;K</font></td><td valign="baseline"><font face="Courier" size="2">        </font>Number of neighbours to search for local mode</td></tr></table>
+</p><p><table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="120"><font size="4"><strong>Output</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;%</font></td><td valign="baseline"><font face="Courier" size="2">    LAB   </font>Indices of modal samples</td></tr></table>
+</p><h3> Description</h3><p><font face="Courier" size="2"> A K-</font>NN modeseeking method is used to assign objects to their nearest mode.&nbsp; Object densities are defined by one over the distance to the<font face="Courier" size="2"> K-</font>th nearest&nbsp; neighbour. Clusters are defined by recursively jumping for every object&nbsp; to object with the highest density in the local neighborhood.</p>
+<p><font face="Courier" size="2"> K </font>can also be a vector of neighborhood sizes, which is much faster.&nbsp; Default<font face="Courier" size="2"> K: </font>a set of values determined by a geometric series.</p><h3> Example(s)</h3><p>
+<font face="Courier" size="2">&nbsp;delfigs
+</font><br><font face="Courier" size="2">&nbsp;a&nbsp;=&nbsp;gendatm(1000);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%&nbsp;generate&nbsp;1000&nbsp;objects&nbsp;in&nbsp;8&nbsp;
+</font><br><font face="Courier" size="2">&nbsp;lab&nbsp;=&nbsp;modeclust(a);&nbsp;
+</font><br><font face="Courier" size="2">&nbsp;for&nbsp;j=1:size(lab,2)
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;nclust&nbsp;=&nbsp;numel(unique(lab(:,j)));
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;if&nbsp;nclust&nbsp;&lt&nbsp;20&nbsp;&&nbsp;nclust&nbsp;%gt&nbsp;1
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;figure;&nbsp;scatterd(prdataset(a,lab(:,j)));
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title(['Number&nbsp;of&nbsp;clusters:&nbsp;'&nbsp;int2str(nclust)]);
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;end
+</font><br><font face="Courier" size="2">&nbsp;end
+</font><br><font face="Courier" size="2">&nbsp;showfigs
+</font><br></p><h3> See also</h3><p>
+<font face="Courier" size="3"><a href="../prtools/mappings.html">mappings</a>, <a href="../prtools/datasets.html">datasets</a>, <a href="../prtools/prkmeans.html">prkmeans</a>, <a href="../prtools/hclust.html">hclust</a>, <a href="../prtools/kcentres.html">kcentres</a>, <a href="../prtools/proxm.html">proxm</a>, </font></p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

@@ -1,0 +1,16 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>nlabeld</title></head>
+<p align="center"><font face="Courier" size=5><strong>NLABELD</strong></font></p>
+<h3> Return numeric labels of classified dataset (c
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;NLABELS = NLABELD(Z)</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;NLABELS = Z*NLABELD</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NLABELS = NLABELD(A,W)</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;NLABELS = A*W*NLABELD</font><br>
+</p>
+<p></p><p>
+<table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="100"><font size="4"><strong>Input</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;Z</font></td><td valign="baseline"><font face="Courier" size="2">         </font>Classified dataset, or<tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;A,W</font></td><td valign="baseline"><font face="Courier" size="2">       </font>Dataset and classifier mapping</td></tr></table>
+</p><p><table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="120"><font size="4"><strong>Output</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;NLABELS</font></td><td valign="baseline"><font face="Courier" size="2">    </font>Column vector of numeric labels)</td></tr></table>
+</p><h3> Description</h3><p> Returns the numberic labels of the classified dataset<font face="Courier" size="2"> Z </font>(typically the&nbsp; result of a mapping or classification<font face="Courier" size="2"> A*W)</font>. For each object in<font face="Courier" size="2"> Z </font>(i.e.&nbsp; each row) the feature label or class label (i.e. the column label) of the&nbsp; maximum column value is returned. This corresponds with the classes&nbsp; stored in<font face="Courier" size="2"> W</font>, which can be found by<font face="Courier" size="2"> GETLABELS(W)</font>.</p><h3> See also</h3><p>
+<font face="Courier" size="3"><a href="../prtools/mappings.html">mappings</a>, <a href="../prtools/datasets.html">datasets</a>, <a href="../prtools/testc.html">testc</a>, <a href="../prtools/plotc.html">plotc</a>, <a href="../@prmapping/getlabels.html">getlabels</a>, </font></p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

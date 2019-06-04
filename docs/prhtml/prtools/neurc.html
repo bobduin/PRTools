@@ -1,0 +1,17 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>neurc</title></head>
+<p align="center"><font face="Courier" size=5><strong>NEURC</strong></font></p>
+<h3> Automatic neural network classifier with one hidden layer
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;[W,UNITS] = NEURC(A)</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;[W,UNITS] = A*NEURC</font><br>
+</p>
+<p></p><p>
+<table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="100"><font size="4"><strong>Input</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;A</font></td><td valign="baseline"><font face="Courier" size="2">       </font>Dataset</td></tr></table>
+</p><p><table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="120"><font size="4"><strong>Output</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;W</font></td><td valign="baseline"><font face="Courier" size="2">       </font>Trained feed-forward neural network mapping<tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;UNITS</font></td><td valign="baseline"><font face="Courier" size="2">   </font>Number of hidden units used.</td></tr></table>
+</p><h3> Description</h3><p> Automatically trained feed-forward neural network classifier. All&nbsp; parameters are automatically determined. The number of hidden units is&nbsp; the number of objects of<font face="Courier" size="2"> A </font>divided by the number of classes plus the&nbsp; feature size, but at least<font face="Courier" size="2"> 2 </font>and at most<font face="Courier" size="2"> 100</font>.</p>
+<p> The network is initialised by<font face="Courier" size="2"> RNNC </font>and trained by<font face="Courier" size="2"> LMNC</font>. Training is&nbsp; stopped when the performance measured by an automatically generated&nbsp; tuning set of<font face="Courier" size="2"> 1000 </font>objects does not improve anymore or after the time set&nbsp; by<font face="Courier" size="2"> PRTIME</font>.</p>
+<p> Uses the Mathworks' neural network toolbox.</p>
+<p> This routine escapes to<font face="Courier" size="2"> KNNC </font>if no classes have more than<font face="Courier" size="2"> 2 </font>objects.</p><h3> See also</h3><p>
+<font face="Courier" size="3"><a href="../prtools/mappings.html">mappings</a>, <a href="../prtools/datasets.html">datasets</a>, <a href="../prtools/lmnc.html">lmnc</a>, <a href="../prtools/bpxnc.html">bpxnc</a>, <a href="../prtools/gendatk.html">gendatk</a>, <a href="../prtools/regoptc.html">regoptc</a>, <a href="../prtools/prtime.html">prtime</a>, </font></p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

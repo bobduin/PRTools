@@ -1,0 +1,23 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>pls_apply</title></head>
+<p align="center"><font face="Courier" size=5><strong>PLS_APPLY</strong></font></p>
+<h3>  Partial Least Squares (applying)
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;Y&nbsp;=&nbsp;pls_apply(X,B)
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;Y&nbsp;=&nbsp;pls_apply(X,B,Options)
+</font><br></p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;INPUT</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;X       [N -by- d_X]    the input  data matrix, N samples, d_X variables</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;B       [d_X -by- d_Y]  regression matrix: Y_new = X_new*B</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(X_new here after preprocessing, Y_new before</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;un-preprocessing; preprocessing and</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;un-preprocessing could be done automatically</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(than Options contains info about</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;preprocessing) or manually)</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;Options  structure returned by pls_train (if not supplied then will</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;be no preprocessing performed)</font><br>
+</p>
+<p></p><p><table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="120"><font size="4"><strong>Output</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;Y</font></td><td valign="baseline"><font face="Courier" size="2">  [N -</font>by- d_Y]<font face="Courier" size="2">    </font>the output data matrix<font face="Courier" size="2">, N </font>samples, d_Y variables</td></tr></table>
+</p><h3> Description</h3><p> Applys<font face="Courier" size="2"> PLS </font>(Partial Least Squares) regression model</p><h3> See also</h3><p>
+<font face="Courier" size="3"><a href="../prtools/pls_train.html">pls_train</a>, </font></p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

@@ -1,0 +1,44 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>gauss</title></head>
+<p align="center"><font face="Courier" size=5><strong>GAUSS</strong></font></p>
+<h3> Generation of a multivariate Gaussian dataset
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;A = GAUSS(N,U,G,LABTYPE)</font><br>
+</p>
+<p><font face="Courier" size="2"> INPUT </font>(in case of generation a<font face="Courier" size="2"> 1-</font>class dataset in<font face="Courier" size="2"> K </font>dimensions)<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;N        Number of objects to be generated (default 50).</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;U        Desired mean (vector of length K).</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;G       K x K covariance matrix. Default eye(K).</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;LABTYPE Label type (default 'crisp')</font><br>
+</p>
+<p><font face="Courier" size="2"> INPUT </font>(in case of generation a<font face="Courier" size="2"> C-</font>class dataset in<font face="Courier" size="2"> K </font>dimensions)<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;N       Vector of length C with numbers of objects per class.</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;U       C x K matrix with class means, or</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dataset with means, labels and priors of classes</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(default: zeros(C,K))</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;G       K x K x C covariance matrix of right size.</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default eye(K);</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;LABTYPE  Label type (default 'crisp')</font><br>
+</p>
+<p></p><p><table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="120"><font size="4"><strong>Output</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;A</font></td><td valign="baseline"><font face="Courier" size="2">        </font>Dataset containing multivariate Gaussian data</td></tr></table>
+</p><h3> Description</h3><p> Generation of<font face="Courier" size="2"> N K-</font>dimensional Gaussian distributed samples for<font face="Courier" size="2"> C </font>classes.&nbsp; The covariance matrices should be specified in<font face="Courier" size="2"> G </font>(size<font face="Courier" size="2"> K*K*C) </font>and the&nbsp; means, labels and prior probabilities can be defined by the dataset<font face="Courier" size="2"> U </font>with&nbsp; size<font face="Courier" size="2"> (C*K)</font>. If<font face="Courier" size="2"> U </font>is not a dataset, it should be a<font face="Courier" size="2"> C*K </font>matrix and<font face="Courier" size="2"> A </font>will&nbsp; be a dataset with<font face="Courier" size="2"> C </font>classes.</p>
+<p> If<font face="Courier" size="2"> N </font>is a vector, exactly<font face="Courier" size="2"> N(I) </font>objects are generated for class<font face="Courier" size="2"> I, I = 1..C</font>.</p><h3> Example(s)</h3><p>
+<font face="Courier" size="2">&nbsp;1.&nbsp;Generation&nbsp;of&nbsp;100&nbsp;points&nbsp;in&nbsp;2D&nbsp;with&nbsp;mean&nbsp;[1&nbsp;1]&nbsp;and&nbsp;default&nbsp;covariance
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;matrix:&nbsp;
+</font><br></p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GAUSS(100,[1 1])</font><br>
+</p>
+<p><font face="Courier" size="2"> 2</font>. Generation of<font face="Courier" size="2"> 50 </font>points for each of two<font face="Courier" size="2"> 1-</font>dimensional distributions with<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mean -1 and 1 and with variances 1 and 2:</font><br>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GAUSS([50 50],[-1;1],CAT(3,1,2))</font><br>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;Note that the two 1-dimensional class means should be given as a column</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;vector [1;-1], as [1 -1] defines a single 2-dimensional mean. Note that</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;the 1-dimensional covariance matrices degenerate to scalar variances,</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;but have still to be combined into a collection of square matrices using</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;the CAT(3,....) function.</font><br>
+</p>
+<p><font face="Courier" size="2"> 3</font>. Generation of<font face="Courier" size="2"> 300 </font>points for<font face="Courier" size="2"> 3 </font>classes with means<font face="Courier" size="2"> [0 0], [0 1] </font>and<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1 1] and covariance matrices [2 1; 1 4], EYE(2) and EYE(2):</font><br>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GAUSS(300,[0 0; 0 1; 1 1]*3,CAT(3,[2 1; 1 4],EYE(2),EYE(2)))</font><br>
+</p><h3> See also</h3><p>
+<font face="Courier" size="3"><a href="../prtools/datasets.html">datasets</a>, <a href="../prtools/prdatasets.html">prdatasets</a>, </font></p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

@@ -1,0 +1,15 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>setlablist</title></head>
+<p align="center"><font face="Courier" size=5><strong>SETLABLIST</strong></font></p>
+<h3> Set names of classes or targets
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A = SETLABLIST(A,LABLIST)</font><br>
+</p>
+<p><font face="Courier" size="2"> LABLIST </font>should be a column vector of<font face="Courier" size="2"> C </font>elements (integers, characters,&nbsp; or strings), in which<font face="Courier" size="2"> C </font>is the number of classes or targets of<font face="Courier" size="2"> A</font>.&nbsp; In case of multiple label lists this resets the current label list.</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A = SETLABLIST(A)</font><br>
+</p>
+<p> Removes entries in the lablist of<font face="Courier" size="2"> A </font>to which no objects are assigned,&nbsp; i.e. it remove empty classes. This command also removes duplicates in the&nbsp; lablist. An example of the merge of two classes in a<font face="Courier" size="2"> 3-</font>class dataset<font face="Courier" size="2"> X </font> with class names<font face="Courier" size="2"> 'A', 'B' </font>and<font face="Courier" size="2"> 'C' </font>can be realized by<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;X = setlablist(X,char('A','B','A'));</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;X = setlablist(X);</font><br>
+</p><h3> See also</h3><p>
+<font face="Courier" size="3"><a href="../prtools/multi_labeling.html">multi_labeling</a>, </font></p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

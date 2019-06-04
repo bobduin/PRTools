@@ -1,0 +1,18 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>lssvc</title></head>
+<p align="center"><font face="Courier" size=5><strong>LSSVC</strong></font></p>
+<h3> Least-Squares Support Vector Classifier
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;W&nbsp;=&nbsp;lssvc(A,TYPE,PAR,C);
+</font><br></p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;INPUT</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;A       dataset</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;TYPE    Type of the kernel (optional; default: 'p')</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;PAR     Kernel parameter (optional; default: 1)</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;C       Regularization parameter (optional; default: 1)</font><br>
+</p>
+<p></p><p><table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="120"><font size="4"><strong>Output</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;W</font></td><td valign="baseline"><font face="Courier" size="2">        </font>Mapping: Least-Squares Support Vector Classifier</td></tr></table>
+</p><h3> Description</h3><p> Optimizes a least-squares support vector classifier for the dataset<font face="Courier" size="2"> A </font>by&nbsp; quadratic programming. The classifier can be of one of the types&nbsp; as defined by<font face="Courier" size="2"> PROXM</font>. Default is linear<font face="Courier" size="2"> (TYPE = </font>'p'<font face="Courier" size="2">, PAR = 1)</font>. The&nbsp; regularization parameter<font face="Courier" size="2"> C </font>allows for seeting the level of overfitting.&nbsp;<font face="Courier" size="2"> A </font>smaller value for<font face="Courier" size="2"> C </font>allows for more class overlap. Default<font face="Courier" size="2"> C = 10</font>.</p>
+<p><font face="Courier" size="2"> NOTE </font> This implementation uses the<font face="Courier" size="2"> LS-</font>SVMLab toolbox. This toolbox is available&nbsp; from http://www.esat.kuleuven.ac.be/sista/lssvmlab/. Make sure the path&nbsp; to<font face="Courier" size="2"> LS-</font>SVMLab is set in Matlab.</p><h3> See also</h3><p>
+<font face="Courier" size="3"><a href="../prtools/mappings.html">mappings</a>, <a href="../prtools/datasets.html">datasets</a>, <a href="../prtools/proxm.html">proxm</a>, </font></p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

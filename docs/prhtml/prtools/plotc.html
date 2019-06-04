@@ -1,0 +1,17 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>plotc</title></head>
+<p align="center"><font face="Courier" size=5><strong>PLOTC</strong></font></p>
+<h3> Plot classifiers
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;PLOTC(W,S,LINE_WIDTH)</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;PLOTC(W,LINE_WIDTH,S)</font><br>
+</p>
+<p> Plots the discriminant as given by the mapping<font face="Courier" size="2"> W </font>on predefined axis,&nbsp; typically set by scatterd. Discriminants are defined by the points&nbsp; where class differences for mapping values are zero.</p>
+<p><font face="Courier" size="2"> S </font>is the plot string, e.g.<font face="Courier" size="2"> S = </font>'b--'. In case<font face="Courier" size="2"> S = </font>'col' a color plot is&nbsp; produced filling the regions of different classes with different colors.&nbsp; Default<font face="Courier" size="2"> S = </font>'k-';</p>
+<p><font face="Courier" size="2"> LINE_WIDTH </font>sets the width of the lines and box. Default<font face="Courier" size="2"> LINE_WIDTH = 1.5 </font></p>
+<p> In<font face="Courier" size="2"> W </font>a cell array of classifiers may be given. In<font face="Courier" size="2"> S </font>a set of plot strings&nbsp; of appropriate size may be given. Automatically a legend is added to&nbsp; the plot.</p>
+<p> The linear gridsize is read from the global parameter<font face="Courier" size="2"> GRIDSIZE</font>, that</p><p><table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="120" valign="baseline"> can</td><td valign="baseline">  be set by the function gridsize:  for instance 'gridsize<font face="Courier" size="2">(100)' </font></td></tr><tr> <td width="120" valign="baseline"> default</td><td valign="baseline">  gridsize is<font face="Courier" size="2"> 30</font>. As all these points have to be classified (e.g.</td></tr><tr> <td width="120" valign="baseline"> 100x100)</td><td valign="baseline">  this always done in batch mode. If needed desired the default</td></tr><tr> <td width="120" valign="baseline"> batch</td><td valign="baseline">  size may be changed by<font face="Courier" size="2"> PRGLOBAL</font>.</td></tr></td></tr></table>
+</p>
+<p> Examples in<font face="Courier" size="2"> PREX_CONFMAT, PREX_PLOTC </font></p><h3> See also</h3><p>
+<font face="Courier" size="3"><a href="../prtools/mappings.html">mappings</a>, <a href="../prtools/scatterd.html">scatterd</a>, <a href="../prtools/plotm.html">plotm</a>, <a href="../prtools/gridsize.html">gridsize</a>, <a href="../prtools/setbatch.html">setbatch</a>, <a href="../prtools/prglobal.html">prglobal</a>, </font></p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

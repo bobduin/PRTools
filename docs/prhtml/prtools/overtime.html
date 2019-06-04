@@ -1,0 +1,22 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>overtime</title></head>
+<p align="center"><font face="Courier" size=5><strong>OVERTIME</strong></font></p>
+<h3> Initialise or check PRTIME controlled execution time
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FLAG = OVERTIME(STARTTIME)</font><br>
+</p>
+<p></p><p>
+<table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="100"><font size="4"><strong>Input</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;STARTTIME</font></td><td valign="baseline"><font face="Courier" size="2">   </font>Refenrence time</td></tr></table>
+</p><p><table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="120"><font size="4"><strong>Output</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;FLAG</font></td><td valign="baseline"><font face="Courier" size="2">        </font>True if<font face="Courier" size="2"> TIME -</font><font face="Courier" size="2"> STARTTIME </font>larger than<font face="Courier" size="2"> PRTIME </font></td></tr></table>
+</p><h3> Description</h3><p><font face="Courier" size="2"> OVERTIME </font>can be used to stop loops after a time set by<font face="Courier" size="2"> PRTIME </font>in the&nbsp; following way<br></p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;starttime&nbsp;=&nbsp;overtime;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%&nbsp;initialise
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;i=1:n
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;....&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%&nbsp;statements
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;overtime(starttime)&nbsp;&nbsp;%&nbsp;check&nbsp;time
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prwarning(2,'execution&nbsp;stopped&nbsp;by&nbsp;PRTIME&nbsp;after&nbsp;%i&nbsp;iterations',i);
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end
+</font><br></p><h3> See also</h3><p>
+<font face="Courier" size="3"><a href="../prtools/prtime.html">prtime</a>, </font></p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

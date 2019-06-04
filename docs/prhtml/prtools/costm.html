@@ -1,0 +1,21 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>costm</title></head>
+<p align="center"><font face="Courier" size=5><strong>COSTM</strong></font></p>
+<h3>  Combiner mapping handling costs in classifications
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;Y = COSTM(X,C,LABLIST)</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;Y = X*COSTM([],C,LABLIST)</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;Y = X*COSTM(C,LABLIST)</font><br>
+</p><h3> Description</h3><p> Maps the classifier output<font face="Courier" size="2"> X </font>(assumed to be posterior probability&nbsp; estimates) to the cost-outputs, defined by the cost-matrix<font face="Courier" size="2"> C </font><br></p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C(i,j)&nbsp;=&nbsp;cost&nbsp;of&nbsp;misclassifying&nbsp;an&nbsp;object&nbsp;from&nbsp;class&nbsp;i&nbsp;as&nbsp;class&nbsp;j.
+</font><br></p>
+<p> Default<font face="Courier" size="2"> C </font>is the cost matrix stored in the dataset<font face="Courier" size="2"> X</font>.&nbsp; The order of the classes is defined by<font face="Courier" size="2"> LABLIST</font>. When no lablist is&nbsp; given, the order as given by<font face="Courier" size="2"> GETFEATLAB(X) </font>is assumed.&nbsp; In order to apply this mapping, it is assumed that the dataset<font face="Courier" size="2"> X </font> represents posterior class probabilities (i.e. normalized by&nbsp; classc).</p><h3> Example(s)</h3><p>
+<font face="Courier" size="2">&nbsp;x&nbsp;=&nbsp;gendatb(100);
+</font><br><font face="Courier" size="2">&nbsp;w1&nbsp;=&nbsp;x*ldc;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%&nbsp;standard&nbsp;classifier
+</font><br><font face="Courier" size="2">&nbsp;C&nbsp;=&nbsp;[0&nbsp;2;&nbsp;1&nbsp;0];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%&nbsp;new&nbsp;cost&nbsp;matrix
+</font><br><font face="Courier" size="2">&nbsp;w2&nbsp;=&nbsp;w1*classc*costm(C);&nbsp;&nbsp;%&nbsp;classifier&nbsp;using&nbsp;this&nbsp;cost-matrix
+</font><br><font face="Courier" size="2">&nbsp;confmat(x*w1)
+</font><br><font face="Courier" size="2">&nbsp;confmat(x*w2)
+</font><br></p><h3> See also</h3><p>
+<font face="Courier" size="3"><a href="../prtools/mappings.html">mappings</a>, <a href="../prtools/classc.html">classc</a>, <a href="../prtools/testd.html">testd</a>, <a href="../prtools/testcost.html">testcost</a>, <a href="../@prmapping/setcost.html">setcost</a>, </font></p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

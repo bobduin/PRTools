@@ -1,0 +1,26 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>readdatafile</title></head>
+<p align="center"><font face="Courier" size=5><strong>READDATAFILE</strong></font></p>
+<h3> Read one of the datafiles, choose for readdatafile 1 or 2
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[B,NEXT,J] = READDATAFILE(A,N)</font><br>
+</p>
+<p></p><p>
+<table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="100"><font size="4"><strong>Input</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;A</font></td><td valign="baseline"><font face="Courier" size="2">            </font>Datafile<tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;N</font></td><td valign="baseline"><font face="Courier" size="2">            </font>Number of the file to be read</td></tr></table>
+</p><p><table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="120"><font size="4"><strong>Output</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;B</font></td><td valign="baseline"><font face="Courier" size="2">            </font>Dataset stored in file<font face="Courier" size="2"> N </font><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;NEXT</font></td><td valign="baseline"><font face="Courier" size="2">         </font>Number of next file to be read<font face="Courier" size="2">, 0 </font>if done<tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;J</font></td><td valign="baseline"><font face="Courier" size="2">            </font>Indices of objects in<font face="Courier" size="2"> A </font></td></tr></table>
+</p><h3> Description</h3><p><font face="Courier" size="2"> A </font>datafile points to a dataset stored in a series of files. This&nbsp; routine reads one of them, but is designed to read them all in a loop.&nbsp;<font face="Courier" size="2"> A </font>typical example is shown below, computing the overall mean per class.&nbsp; If the preprocessing field of<font face="Courier" size="2"> A </font>is set, the listed preprocessing is&nbsp; applied before returning.&nbsp; If the mappings field of<font face="Courier" size="2"> A </font>is set, the listed mappings are applied&nbsp; to<font face="Courier" size="2"> B </font>before returning.</p>
+<p> As the objects in<font face="Courier" size="2"> A </font>may be randomly distributed over the files, a&nbsp; reordering is performed internally in this routine. Consequently,&nbsp; objects may be returned in a different order than stored in<font face="Courier" size="2"> A</font>.</p>
+<p> In case two datafiles have to be handled in the same process, or one&nbsp; datafiles twice, there is a problem with the persistent variables keeping&nbsp; track of the file. This routine can thereby call two identical copies&nbsp;<font face="Courier" size="2"> READDATAFILE1 </font>or<font face="Courier" size="2"> READDATAFILE2</font>, controlled by the global variable&nbsp;<font face="Courier" size="2"> NUMREADFILE (1 </font>or<font face="Courier" size="2"> 2)</font>.</p><h3> Example(s)</h3><p>
+<font face="Courier" size="2">&nbsp;[m,k,c]&nbsp;=&nbsp;getsize(a);
+</font><br><font face="Courier" size="2">&nbsp;nobjects&nbsp;=&nbsp;classsizes(a);
+</font><br><font face="Courier" size="2">&nbsp;u&nbsp;=&nbsp;zeros(c,k);
+</font><br><font face="Courier" size="2">&nbsp;next&nbsp;=&nbsp;1;
+</font><br><font face="Courier" size="2">&nbsp;while&nbsp;next&nbsp;%gt&nbsp;0
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;[b,next]&nbsp;=&nbsp;readdatafile(a,next)
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;u&nbsp;=&nbsp;u&nbsp;+&nbsp;meancov(b)&nbsp;.*&nbsp;repmat(nobjects',1,k);
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;next&nbsp;&lt=&nbsp;0,&nbsp;break;&nbsp;end
+</font><br><font face="Courier" size="2">&nbsp;end
+</font><br><font face="Courier" size="2">&nbsp;u&nbsp;=&nbsp;u&nbsp;./&nbsp;repmat(classsizes(a)',1,k);
+</font><br></p><h3> See also</h3><p>
+<font face="Courier" size="3"><a href="../@prdataset/prdataset.html">prdataset</a>, datafile, </font></p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

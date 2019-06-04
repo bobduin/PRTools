@@ -1,0 +1,21 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>mapex</title></head>
+<p align="center"><font face="Courier" size=5><strong>MAPEX</strong></font></p>
+<h3> Train and execute arbitrary untrained mapping
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B = A*(W*MAPEX) = A*(A*W)</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B = A*MAPEX(W,PAR1,PAR2, ...)</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B = A*MAPEX(UMAP,PAR1,PAR2, ...)</font><br>
+</p>
+<p></p><p>
+<table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="100"><font size="4"><strong>Input</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;A</font></td><td valign="baseline"><font face="Courier" size="2">         </font>Dataset or datafile or double<tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;W</font></td><td valign="baseline"><font face="Courier" size="2">         </font>Untrained mapping<tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;UMAP</font></td><td valign="baseline"><font face="Courier" size="2">      </font>String with name of untrained mapping<tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;PAR1</font></td><td valign="baseline"><font face="Courier" size="2">      </font>Parameters of untrained mapping<font face="Courier" size="2"> W </font>or<font face="Courier" size="2"> UMAP </font></td></tr></table>
+</p><p><table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="120"><font size="4"><strong>Output</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;B</font></td><td valign="baseline"><font face="Courier" size="2">                </font>Resulting dataset, datafile or double array</td></tr></table>
+</p><h3> Description</h3><p> This routine facilitates the construction of shortcuts by training and&nbsp; executing an untrained mapping by the same data. It is typically useful&nbsp; for mappings like<font face="Courier" size="2"> PROXM </font>and<font face="Courier" size="2"> SCALEM </font>that are often trained and exectuted&nbsp; with the same data.</p><h3> Example(s)</h3><p>
+<font face="Courier" size="2">&nbsp;mink1&nbsp;=&nbsp;proxm('m',1)*mapex
+</font><br><font face="Courier" size="2">&nbsp;mink1&nbsp;=&nbsp;mapex(proxm,'m',1)&nbsp;&nbsp;&nbsp;&nbsp;%&nbsp;the&nbsp;same
+</font><br><font face="Courier" size="2">&nbsp;mink1&nbsp;=&nbsp;mapex('proxm','m',1)&nbsp;&nbsp;%&nbsp;the&nbsp;same
+</font><br><font face="Courier" size="2">&nbsp;Herewith&nbsp;D&nbsp;=&nbsp;A*mink1&nbsp;computes&nbsp;a&nbsp;dissimilarity&nbsp;matrix&nbsp;based&nbsp;on&nbsp;the
+</font><br><font face="Courier" size="2">&nbsp;Minkowsky_1&nbsp;metric&nbsp;between&nbsp;all&nbsp;objects&nbsp;in&nbsp;A.
+</font><br></p><h3> See also</h3><p>
+<font face="Courier" size="3"><a href="../prtools/datasets.html">datasets</a>, <a href="../prtools/mappings.html">mappings</a>, <a href="../prtools/proxm.html">proxm</a>, <a href="../prtools/scalem.html">scalem</a>, </font></p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

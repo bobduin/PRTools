@@ -1,0 +1,24 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>filtm</title></head>
+<p align="center"><font face="Courier" size=5><strong>FILTM</strong></font></p>
+<h3> Mapping to filter objects in datasets and datafiles
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B = FILTM(A,COMMAND,{PAR1,PAR2,....},SIZE)</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B = A*FILTM([],COMMAND,{PAR1,PAR2,....},SIZE)</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B = A*FILTM(COMMAND,{PAR1,PAR2,....},SIZE)</font><br>
+</p>
+<p></p><p>
+<table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="100"><font size="4"><strong>Input</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;A</font></td><td valign="baseline"><font face="Courier" size="2">                </font>Dataset or datafile or double<tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;COMMAND</font></td><td valign="baseline"><font face="Courier" size="2">          </font>String with function name of command to be executed<tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;{PAR1,...}</font></td><td valign="baseline"><font face="Courier" size="2">       </font>Cell array with optional parameters to<font face="Courier" size="2"> COMMAND </font><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;SIZE</font></td><td valign="baseline"><font face="Courier" size="2">             </font>Output size of the mapping (default: input size)</td></tr></table>
+</p><p><table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="120"><font size="4"><strong>Output</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;B</font></td><td valign="baseline"><font face="Courier" size="2">                </font>Dataset or datafile of images processed by<font face="Courier" size="2"> COMMAND </font></td></tr></table>
+</p><h3> Description</h3><p> For each object stored in<font face="Courier" size="2"> A </font>a filter operation is performed as</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OBJECT_OUT&nbsp;=&nbsp;COMMAND(OBJECT_IN,PAR1,PAR2,....)
+</font><br></p>
+<p> The results are collected and stored in<font face="Courier" size="2"> B</font>. In case<font face="Courier" size="2"> A </font>(and thereby<font face="Courier" size="2"> B) </font>is&nbsp; a datafile, execution is postponed until conversion into a dataset, or a&nbsp; call to<font face="Courier" size="2"> SAVEDATAFILE </font>or<font face="Courier" size="2"> CREATEDATAFILE</font>.</p><h3> Example(s)</h3><p>
+<font face="Courier" size="2">&nbsp;B&nbsp;=&nbsp;A*filtm('histc',[1:256]);
+</font><br><font face="Courier" size="2">&nbsp;Computes&nbsp;for&nbsp;every&nbsp;object&nbsp;in&nbsp;A&nbsp;a&nbsp;histogram&nbsp;and&nbsp;stores&nbsp;it&nbsp;in&nbsp;B.
+</font><br></p>
+<p><font face="Courier" size="2">&nbsp;A&nbsp;similar&nbsp;command&nbsp;FILTIM&nbsp;is&nbsp;recommended&nbsp;for&nbsp;handling&nbsp;multiband&nbsp;images.
+</font><br><font face="Courier" size="2">&nbsp;The&nbsp;more&nbsp;general&nbsp;command&nbsp;PROCM&nbsp;is&nbsp;useful&nbsp;for&nbsp;obtaining&nbsp;multiple&nbsp;outputs.
+</font><br></p><h3> See also</h3><p>
+<font face="Courier" size="3"><a href="../prtools/datasets.html">datasets</a>, <a href="../prtools/datafiles.html">datafiles</a>, <a href="../prtools/im2obj.html">im2obj</a>, <a href="../prtools/data2im.html">data2im</a>, <a href="../prtools/im2feat.html">im2feat</a>, <a href="../prtools/datgauss.html">datgauss</a>, <a href="../prtools/datfilt.html">datfilt</a>, <a href="../prtools/filtim.html">filtim</a>, </font><font face="Courier" size="3"><a href="../prtools/savedatafile.html">savedatafile</a>, <a href="../prtools/createdatafile.html">createdatafile</a>, <a href="../prtools/mapm.html">mapm</a>, <a href="../prtools/procm.html">procm</a>, </font></p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

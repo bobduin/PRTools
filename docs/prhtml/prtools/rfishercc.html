@@ -1,0 +1,30 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>rfishercc</title></head>
+<p align="center"><font face="Courier" size=5><strong>RFISHERCC</strong></font></p>
+<h3>  Fisher combining of randomly generated classifiers
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;W = RFISHERCC(A,N)</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;W = A*RFISHERCC(N)</font><br>
+</p>
+<p></p><p>
+<table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="100"><font size="4"><strong>Input</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;A</font></td><td valign="baseline"><font face="Courier" size="2">   </font>prdataset to be used for training<font face="Courier" size="2">, M </font>objects<font face="Courier" size="2">, C </font>classes<tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;N</font></td><td valign="baseline"><font face="Courier" size="2">   </font>number of base classifiers to be generated&nbsp; default:<font face="Courier" size="2"> M/10, <= 100</font>.</td></tr></table>
+</p><p><table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="120"><font size="4"><strong>Output</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;W</font></td><td valign="baseline"><font face="Courier" size="2">   </font>trained classifier</td></tr></table>
+</p><h3> Description</h3><p> This routine generates a a random set of<font face="Courier" size="2"> N </font>simple classifiers, based on&nbsp; the<font face="Courier" size="2"> 1-</font>NN rule using a single, randomly selected object per class. The&nbsp; confindences (see<font face="Courier" size="2"> KNNC) </font>for the total training set<font face="Courier" size="2"> A </font>(in total<font face="Courier" size="2"> N*(C-</font>1)&nbsp; per object) are used to train a combiner using<font face="Courier" size="2"> FISHERC</font>.</p><h3> Example(s)</h3><p>
+<font face="Courier" size="2">&nbsp;a&nbsp;=&nbsp;gendatb;
+</font><br><font face="Courier" size="2">&nbsp;figure;&nbsp;scatterd(a);&nbsp;
+</font><br><font face="Courier" size="2">&nbsp;plotc(a*rfishercc)
+</font><br></p>
+<p><font face="Courier" size="2">&nbsp;a&nbsp;=&nbsp;gendatm;&nbsp;
+</font><br><font face="Courier" size="2">&nbsp;figure;&nbsp;scatterd(a);&nbsp;
+</font><br><font face="Courier" size="2">&nbsp;plotc(a*rfishercc(2),'col')
+</font><br></p>
+<p><font face="Courier" size="2">&nbsp;a&nbsp;=&nbsp;setprior(sonar,0);&nbsp;%&nbsp;make&nbsp;priors&nbsp;equal
+</font><br><font face="Courier" size="2">&nbsp;w1&nbsp;=&nbsp;setname(rfishercc(10),'RFisher-10');
+</font><br><font face="Courier" size="2">&nbsp;w2&nbsp;=&nbsp;setname(rfishercc(20),'RFisher-20');
+</font><br><font face="Courier" size="2">&nbsp;w3&nbsp;=&nbsp;setname(rfishercc(40),'RFisher-40');
+</font><br><font face="Courier" size="2">&nbsp;randreset(1);&nbsp;%&nbsp;for&nbsp;reproducability
+</font><br><font face="Courier" size="2">&nbsp;e&nbsp;=&nbsp;cleval(a,{w1,w2,w3},[5,10,20,40,80],10);
+</font><br><font face="Courier" size="2">&nbsp;plote(e);
+</font><br></p><h3> See also</h3><p>
+<font face="Courier" size="3"><a href="../prtools/mappings.html">mappings</a>, <a href="../prtools/datasets.html">datasets</a>, <a href="../prtools/knnc.html">knnc</a>, <a href="../prtools/fisherc.html">fisherc</a>, </font></p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

@@ -1,0 +1,16 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>userkernel</title></head>
+<p align="center"><font face="Courier" size=5><strong>USERKERNEL</strong></font></p>
+<h3> Construct user defined kernel mapping  
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;K = USERKERNEL(B,R,FUNC,P1,P2, ...)</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;K = B*USERKERNEL([],R,FUNC,P1,P2, ...)</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;W = USERKERNEL([],R,FUNC,P1,P2, ...)</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;W = R*USERKERNEL([],[],FUNC,P1,P2, ...)</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;K = B*W</font><br>
+</p>
+<p></p><p>
+<table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="100"><font size="4"><strong>Input</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;R</font></td><td valign="baseline"><font face="Courier" size="2">      </font>Dataset, representation set, default<font face="Courier" size="2"> B </font><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;B</font></td><td valign="baseline"><font face="Courier" size="2">      </font>Dataset<tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;FUNC</font></td><td valign="baseline"><font face="Courier" size="2">   </font>String with function name to compute kernels (proximities) by<tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;K</font></td><td valign="baseline"><font face="Courier" size="2">  = FEVAL(FUNC,B,R,P1,P2, ...) </font></td></tr></table>
+</p><p><table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="120"><font size="4"><strong>Output</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;W</font></td><td valign="baseline"><font face="Courier" size="2">      </font>Trained kernel mapping<tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;K</font></td><td valign="baseline"><font face="Courier" size="2">      </font>Kernel (proximity) matrix</td></tr></table>
+</p><h3> Description</h3><p> The kernel matrix<font face="Courier" size="2"> K </font>is computed according to the definition given by the&nbsp; user supplied function<font face="Courier" size="2"> FUNC</font>. The size of<font face="Courier" size="2"> K </font>is<font face="Courier" size="2"> [SIZE(B,1) SIZE(R,1)] </font></p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

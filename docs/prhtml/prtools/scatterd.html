@@ -1,0 +1,32 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>scatterd</title></head>
+<p align="center"><font face="Courier" size=5><strong>SCATTERD</strong></font></p>
+<h3> Display scatterplot
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;H = SCATTERD(A)</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;H = A*SCATTERD</font><br>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;H = SCATTERD(A,DIM,S,CMAP,FONTSIZE,'label','both','legend','gridded')</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;H = A*SCATTERD([],DIM,S,CMAP,FONTSIZE,'label','both','legend','gridded')</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;H = A*SCATTERD(DIM,S,CMAP,FONTSIZE,'label','both','legend','gridded')</font><br>
+</p>
+<p></p><p>
+<table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="100"><font size="4"><strong>Input</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;A</font></td><td valign="baseline"><font face="Courier" size="2">      </font>Dataset or matrix<tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;DIM</font></td><td valign="baseline"><font face="Courier" size="2">    </font>Number of dimensions:<font face="Courier" size="2"> 1,2 </font>or<font face="Courier" size="2"> 3 </font>(optional; default:<font face="Courier" size="2"> 2) </font><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;S</font></td><td valign="baseline"><font face="Courier" size="2">      </font>String specifying the colors and markers (optional)<tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;CMAP</font></td><td valign="baseline"><font face="Courier" size="2">   </font>Matrix with a color map (optional)</td></tr></table>
+</p><p><table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="120"><font size="4"><strong>Output</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;H</font></td><td valign="baseline"><font face="Courier" size="2">      </font>Vector of handles</td></tr></table>
+</p><h3> Description</h3><p><font face="Courier" size="2"> SCATTERD(A) </font>displays a<font face="Courier" size="2"> 2D </font>scatterplot of the first two features of the&nbsp; dataset<font face="Courier" size="2"> A</font>. If the number of dimensions<font face="Courier" size="2"> DIM </font>is specified<font face="Courier" size="2"> (1..3)</font>, it plots&nbsp; the first<font face="Courier" size="2"> D </font>features in a<font face="Courier" size="2"> D-</font>dimensional plot<font face="Courier" size="2"> (D<4)</font>. If the plot string<font face="Courier" size="2"> S </font> is provided, e.g.<font face="Courier" size="2"> S = </font>'w+', all points are plotted accordingly. If given,&nbsp; different plot strings are used for different classes. See<font face="Courier" size="2"> PLOT </font>for the&nbsp; specification of plot strings.</p>
+<p> If<font face="Courier" size="2"> CMAP </font>is specified, the color of the object symbols is determined by&nbsp;<font face="Courier" size="2"> CMAP </font>indexed by the object labels. A colormap has the size<font face="Courier" size="2"> [C </font>x<font face="Courier" size="2"> 3]</font>, where&nbsp;<font face="Courier" size="2"> C </font>is the number of classes. The three components of<font face="Courier" size="2"> CMAP(I,:) </font>determine&nbsp; the red, green and blue components of the color. For instance<br></p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MAP&nbsp;=&nbsp;HSV;&nbsp;[M,K]&nbsp;=&nbsp;SIZE(A);&nbsp;LABELS&nbsp;=&nbsp;CEIL(64*[1:M]'/M);&nbsp;
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;A = PRDATASET(A,LABELS); SCATTERD(A,'.','COLORMAP',MAP);</font><br>
+</p>
+<p> This may be used for tracking ordered objects.</p>
+<p><font face="Courier" size="2"> FONTSIZE </font>may be a vector with three elements: fontsize, markersize and&nbsp; size of the label font in case of a label plot.</p>
+<p> Various other options are<br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;'LABEL'  : plot labels instead of symbols</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;'BOTH'   : plot labels next to each sample</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;'LEGEND' : place a legend in the figure</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;'GRIDDED': make a grid of 2D scatterplots of each pair of features</font><br>
+</p>
+<p> All the parameters, except for the dataset<font face="Courier" size="2"> A </font>can be specified in any&nbsp; order or can be left out.</p>
+<p> Classifiers can be plot in the scatterplot by<font face="Courier" size="2"> PLOTC</font>.&nbsp; Note that<font face="Courier" size="2"> PLOTC </font>does not work for<font face="Courier" size="2"> 1D </font>and<font face="Courier" size="2"> 3D </font>scatterplots.</p><h3> Example(s)</h3><p>
+</p><font face="Courier" size="3"><a href="../prtools/prex_confmat.html">prex_confmat</a>, <a href="../prtools/prex_density.html">prex_density</a>, <a href="../prtools/prex_plotc.html">prex_plotc</a>, <a href="../prtools/prex_mcplot.html">prex_mcplot</a>, </font><p></p><h3> See also</h3><p>
+<font face="Courier" size="3"><a href="../prtools/datasets.html">datasets</a>, <a href="../prtools/plotc.html">plotc</a>, <a href="../prtools/scattern.html">scattern</a>, </font></p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

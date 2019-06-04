@@ -1,0 +1,17 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>nmc</title></head>
+<p align="center"><font face="Courier" size=5><strong>NMC</strong></font></p>
+<h3> Nearest Mean Classifier
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;W = NMC(A)</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;W = A*NMC</font><br>
+</p>
+<p></p><p>
+<table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="100"><font size="4"><strong>Input</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;A</font></td><td valign="baseline"><font face="Courier" size="2">     </font>Dataset</td></tr></table>
+</p><p><table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="120"><font size="4"><strong>Output</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;W</font></td><td valign="baseline"><font face="Courier" size="2">     </font>Nearest Mean Classifier</td></tr></table>
+</p><h3> Description</h3><p> Computation of the nearest mean classifier between the classes in the&nbsp; dataset<font face="Courier" size="2"> A</font>. The use of soft labels is supported. Prior probabilities are&nbsp; not used.</p>
+<p> The difference with<font face="Courier" size="2"> NMSC </font>is that<font face="Courier" size="2"> NMSC </font>is based on an assumption of normal&nbsp; distributions and thereby automatically scales the features and is&nbsp; sensitive to class priors.<font face="Courier" size="2"> NMC </font>is a plain nearest mean classifier for&nbsp; which the assigned classes are are sensitive to feature scaling and&nbsp; unsensitive to class priors.</p>
+<p> The estimated class confidences by<font face="Courier" size="2"> B*NMC(A)</font>, however, are based on&nbsp; assumed spherical gaussian distributions of the same size.</p>
+<p> As<font face="Courier" size="2"> NMC </font>is a simple linear classifier, a non-linear combiner might give a&nbsp; significant performance improvement in multi-dimensional problems, e.g.&nbsp; by<font face="Courier" size="2"> W = A*(NMC*QDC([],[]</font>,1e-6)).</p><h3> See also</h3><p>
+<font face="Courier" size="3"><a href="../prtools/datasets.html">datasets</a>, <a href="../prtools/mappings.html">mappings</a>, <a href="../prtools/nmsc.html">nmsc</a>, <a href="../prtools/ldc.html">ldc</a>, <a href="../prtools/fisherc.html">fisherc</a>, <a href="../prtools/qdc.html">qdc</a>, <a href="../prtools/udc.html">udc</a>, </font></p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

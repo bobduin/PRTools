@@ -1,0 +1,18 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>testauc</title></head>
+<p align="center"><font face="Courier" size=5><strong>TESTAUC</strong></font></p>
+<h3> Multiclass error area under the ROC
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;E = TESTAUC(A*W)</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;E = TESTAUC(A,W)</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;E = A*TESTAUC(W)</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;E = A*W*TESTAUC</font><br>
+</p>
+<p></p><p>
+<table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="100"><font size="4"><strong>Input</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;A</font></td><td valign="baseline"><font face="Courier" size="2">   </font>Dataset to be classified<tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;W</font></td><td valign="baseline"><font face="Courier" size="2">   </font>Classifier</td></tr></table>
+</p><p><table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="120"><font size="4"><strong>Output</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;E</font></td><td valign="baseline"><font face="Courier" size="2">   </font>Error, Area under the<font face="Courier" size="2"> ROC </font></td></tr></table>
+</p><h3> Description</h3><p> The area under the<font face="Courier" size="2"> ROC </font>is computed for the datset<font face="Courier" size="2"> A </font>w.r.t. the&nbsp; classifer<font face="Courier" size="2"> W</font>. The estimator is based on a rank analysis of the classifier&nbsp; outcomes. Ties are broken by a two-way sorting and averaging.</p>
+<p> The multiclass situation is solved by averaging over all outcomes of&nbsp; the one-against-rest ROCs.</p>
+<p> Note that<font face="Courier" size="2"> E </font>is an error and not a performance measure like the<font face="Courier" size="2"> AUC </font>often&nbsp; used in literature.</p><h3> See also</h3><p>
+<font face="Courier" size="3"><a href="../prtools/datasets.html">datasets</a>, <a href="../prtools/mappings.html">mappings</a>, <a href="../prtools/testc.html">testc</a>, <a href="../prtools/prroc.html">prroc</a>, </font></p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

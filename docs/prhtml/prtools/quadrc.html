@@ -1,0 +1,18 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>quadrc</title></head>
+<p align="center"><font face="Courier" size=5><strong>QUADRC</strong></font></p>
+<h3> Trainable quadratic classifier
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;W = QUADRC(A,R,S)</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;W = A*QUADRC([],R,S)</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;W = A*QUADRC(R,S)</font><br>
+</p>
+<p></p><p>
+<table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="100"><font size="4"><strong>Input</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;A</font></td><td valign="baseline"><font face="Courier" size="2">      </font>Dataset<tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;R,S</font></td><td valign="baseline"><font face="Courier" size="2">     0 <= R,S <= 1</font>, regularisation parameters (default:<font face="Courier" size="2"> R = 0, S = 0) </font></td></tr></table>
+</p><p><table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="120"><font size="4"><strong>Output</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;W</font></td><td valign="baseline"><font face="Courier" size="2">      </font>Quadratic Discriminant Classifier mapping</td></tr></table>
+</p><h3> Description</h3><p> Computation of the quadratic classifier between the classes of the dataset&nbsp;<font face="Courier" size="2"> A </font>based on different class covariances.<font face="Courier" size="2"> R </font>and<font face="Courier" size="2"> S </font>are regularisation&nbsp; parameters used for finding the covariance matrix as</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;G&nbsp;=&nbsp;(1-R-S)*G&nbsp;+&nbsp;R*diag(diag(G))&nbsp;+&nbsp;S*mean(diag(G))*eye(size(G,1))
+</font><br></p>
+<p> This routine differs from<font face="Courier" size="2"> QDC; </font>instead of using the densities, it is based&nbsp; on the class covariances and does not use class priors. The multi-class&nbsp; problem is solved by multiple two-class quadratic discriminants, using&nbsp;<font face="Courier" size="2"> MCLASSC</font>.</p><h3> See also</h3><p>
+<font face="Courier" size="3"><a href="../prtools/mappings.html">mappings</a>, <a href="../prtools/datasets.html">datasets</a>, <a href="../prtools/fisherc.html">fisherc</a>, <a href="../prtools/nmc.html">nmc</a>, <a href="../prtools/nmsc.html">nmsc</a>, <a href="../prtools/ldc.html">ldc</a>, <a href="../prtools/udc.html">udc</a>, <a href="../prtools/qdc.html">qdc</a>, <a href="../prtools/mclassc.html">mclassc</a>, fishercc, </font></p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

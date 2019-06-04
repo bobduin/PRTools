@@ -1,0 +1,18 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>votec</title></head>
+<p align="center"><font face="Courier" size=5><strong>VOTEC</strong></font></p>
+<h3> Voting combining classifier
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;W = VOTEC(V)</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;W = V*VOTEC</font><br>
+</p>
+<p></p><p>
+<table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="100"><font size="4"><strong>Input</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;V</font></td><td valign="baseline"><font face="Courier" size="2">    </font>Set of classifiers</td></tr></table>
+</p><p><table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="120"><font size="4"><strong>Output</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;W</font></td><td valign="baseline"><font face="Courier" size="2">    </font>Voting combiner</td></tr></table>
+</p><h3> Description</h3><p> If<font face="Courier" size="2"> V = [V1,V2,V3,...] </font>is a stacked set of classifiers trained for the&nbsp; same classes<font face="Courier" size="2">, W </font>is the voting combiner: it selects the class with the&nbsp; highest vote of the base classifiers. This might also be used as&nbsp;<font face="Courier" size="2"> A*[V1,V2,V3]*VOTEC </font>in which<font face="Courier" size="2"> A </font>is a dataset to be classified.</p>
+<p> The direct classifier outputs<font face="Courier" size="2"> D = B*W </font>for a test set<font face="Courier" size="2"> B </font>are posterior&nbsp; probability estimates. D(i,j)<font face="Courier" size="2"> = </font>(v+1)<font face="Courier" size="2"> / </font>(n+c), in which v is the number&nbsp; of votes object i receives for the j-th class. n is the total number of&nbsp; classifiers, c the total number of classes.</p>
+<p> The base classifiers may be combined in a stacked way (operating in the&nbsp; same feature space) by<font face="Courier" size="2"> V = [V1,V2,V3, ... ] </font>or in a parallel way&nbsp; (operating in different feature spaces) by<font face="Courier" size="2"> V = [V1;V2;V3; ... ] </font></p><h3> Example(s)</h3><p>
+<font face="Courier" size="2">&nbsp;PREX_COMBINING
+</font><br></p><h3> See also</h3><p>
+<font face="Courier" size="3"><a href="../prtools/mappings.html">mappings</a>, <a href="../prtools/datasets.html">datasets</a>, <a href="../prtools/prodc.html">prodc</a>, <a href="../prtools/maxc.html">maxc</a>, <a href="../prtools/minc.html">minc</a>, </font><font face="Courier" size="3"><a href="../prtools/medianc.html">medianc</a>, <a href="../prtools/meanc.html">meanc</a>, <a href="../prtools/averagec.html">averagec</a>, <a href="../prtools/stacked.html">stacked</a>, <a href="../prtools/parallel.html">parallel</a>, </font></p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

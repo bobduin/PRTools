@@ -1,0 +1,21 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>gendatsin</title></head>
+<p align="center"><font face="Courier" size=5><strong>GENDATSIN</strong></font></p>
+<h3> Generate sinusoidal regression data
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X = GENDATSIN(N,SIGMA)</font><br>
+</p>
+<p></p><p>
+<table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="100"><font size="4"><strong>Input</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;N</font></td><td valign="baseline"><font face="Courier" size="2">       </font>Number of objects to generate<tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;SIGMA</font></td><td valign="baseline"><font face="Courier" size="2">   </font>Standard deviation of the noise</td></tr></table>
+</p><p><table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="120"><font size="4"><strong>Output</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;X</font></td><td valign="baseline"><font face="Courier" size="2">       </font>Regression dataset</td></tr></table>
+</p><h3> Description</h3><p> Generate an artificial regression dataset<font face="Courier" size="2"> [X,Y] </font>with<br></p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y&nbsp;=&nbsp;sin(4x)&nbsp;+&nbsp;noise.&nbsp;
+</font><br></p>
+<p> where noise is Gaussian distributed with standard deviation sigma.</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;X = GENDATSIN(100)</font><br>
+&nbsp; generates<font face="Courier" size="2"> 100 </font>x,y pairs with data and default noise (sigma<font face="Courier" size="2"> = 0.1)</font>.</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;x = (0:0.01:1)';</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;y = genregsin(x,0);</font><br>
+&nbsp; generates the true function along the x-axis, with zero noise.</p><h3> See also</h3><p>
+<font face="Courier" size="3"><a href="../prtools/gendatr.html">gendatr</a>, <a href="../prtools/gendatsinc.html">gendatsinc</a>, </font></p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

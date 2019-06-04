@@ -1,0 +1,27 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>prmemory</title></head>
+<p align="center"><font face="Courier" size=5><strong>PRMEMORY</strong></font></p>
+<h3> Set/get size of memory usage
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;N = PRMEMORY(N)</font><br>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;N : The desired / retrieved maximum size data of matrices (in</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;matrix elements)</font><br>
+</p><h3> Description</h3><p> This retoutine sets or retrieves a global variable<font face="Courier" size="2"> GLOBALPRMEMORY </font>that&nbsp; controls the maximum size of data matrices in PRTools. Routines like&nbsp;<font face="Courier" size="2"> KNNC, KNN_MAP, PARZEN_MAP </font>and<font face="Courier" size="2"> TESTP </font>make use of it by computing&nbsp; additional loops and avoiding to define very large distance matrices.&nbsp; The default for this maximum size is set to<font face="Courier" size="2"> 50000000</font>. For most&nbsp; computers there is no need to reduce it. There is not much speed up&nbsp; to be expected if it is enlarged.</p>
+<p><font face="Courier" size="2"> PRMEMORY </font>gives also the number of elements for which a conversion from&nbsp; datafiles to datasets is approved.</p>
+<p> This facility is illustrated by the following example, using the&nbsp; routine<font face="Courier" size="2"> PRMEM</font>.</p>
+<p> Assume that an array of the size<font face="Courier" size="2"> [M </font>x<font face="Courier" size="2"> K] </font>has to be computed. The&nbsp; numbers of<font face="Courier" size="2"> LOOPS </font>and<font face="Courier" size="2"> ROWS </font>are determined which are needed such that&nbsp;<font face="Courier" size="2"> ROWS*K < GLOBALPRMEMORY </font>(a global variable that is initialized in this&nbsp; routine, if necessary). The final number of rows for the last loop&nbsp; is returned in<font face="Courier" size="2"> LAST</font>.</p><h3> Example(s)</h3><p>
+<font face="Courier" size="2">&nbsp;[M,K]&nbsp;=&nbsp;size(A);
+</font><br><font face="Courier" size="2">&nbsp;[LOOPS,ROWS,LAST]&nbsp;=&nbsp;prmem(M,K);
+</font><br><font face="Courier" size="2">&nbsp;if&nbsp;(LOOPS&nbsp;==&nbsp;1)
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;RESULT&nbsp;=&nbsp;&lt&nbsp;compute&nbsp;the&nbsp;result&nbsp;based&nbsp;on&nbsp;A&nbsp;%gt
+</font><br><font face="Courier" size="2">&nbsp;else
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;RESULT&nbsp;=&nbsp;0;
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;for&nbsp;J&nbsp;=1:LOOPS
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(J&nbsp;==&nbsp;LOOPS),&nbsp;N&nbsp;=&nbsp;LAST;&nbsp;else&nbsp;N&nbsp;=&nbsp;ROWS;&nbsp;end
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NN&nbsp;=&nbsp;(J-1)*ROWS;
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RESULT&nbsp;=&nbsp;RESULT&nbsp;+&nbsp;&lt&nbsp;compute&nbsp;a&nbsp;partial&nbsp;result&nbsp;based&nbsp;on&nbsp;A(NN+1:NN+N,:)&nbsp;%gt
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;end
+</font><br><font face="Courier" size="2">&nbsp;end
+</font><br></p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

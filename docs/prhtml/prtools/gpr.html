@@ -1,0 +1,20 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>gpr</title></head>
+<p align="center"><font face="Courier" size=5><strong>GPR</strong></font></p>
+<h3> Trainable mapping for Gaussian Process regression
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;W&nbsp;=&nbsp;GPR(A,KERNEL,S_noise)
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;W&nbsp;=&nbsp;A*GPR([],KERNEL,S_noise)
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;W&nbsp;=&nbsp;A*GPR(KERNEL,S_noise)
+</font><br></p>
+<p><font face="Courier" size="2">&nbsp;INPUT</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;A        Dataset used for training</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;KERNEL   Untrained mapping to compute kernel by A*(A*KERNEL)</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;during training, or B*(A*KERNEL) during evaluation with</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dataset B</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;S_noise  Standard deviation of the noise</font><br>
+</p>
+<p></p><p><table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="120"><font size="4"><strong>Output</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;W</font></td><td valign="baseline"><font face="Courier" size="2">         </font>Mapping: Gaussian Process regression</td></tr></table>
+</p><h3> Description</h3><p> Fit a Gaussian Process regressor on dataset<font face="Courier" size="2"> A</font>. For a nonlinear regressor,&nbsp; define kernel mapping<font face="Courier" size="2"> KERNEL</font>. For kernel definitions, have a look at&nbsp; proxm.m.</p><h3> See also</h3><p>
+<font face="Courier" size="3"><a href="../prtools/datasets.html">datasets</a>, <a href="../prtools/mappings.html">mappings</a>, <a href="../prtools/svmr.html">svmr</a>, <a href="../prtools/proxm.html">proxm</a>, <a href="../prtools/linearr.html">linearr</a>, <a href="../prtools/testr.html">testr</a>, <a href="../prtools/plotr.html">plotr</a>, </font></p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

@@ -1,0 +1,32 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>get</title></head>
+<p align="center"><font face="Courier" size=5><strong>GET</strong></font></p>
+<h3> Get mapping parameter fields
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;[VALUE1,VALUE2,...] = GET(W,FIELD1,FIELD2,...)</font><br>
+</p>
+<p></p><p>
+<table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="100"><font size="4"><strong>Input</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;W</font></td><td valign="baseline"><font face="Courier" size="2">        </font>Mapping&nbsp; FIELDx  Field names (strings)</td></tr></table>
+</p><p><table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="120"><font size="4"><strong>Output</strong></font></td>&nbsp; VALUEx  Value of field x</td></tr></table>
+</p><h3> Description</h3><p> Get the values of the fields in<font face="Courier" size="2"> W </font>specified by<font face="Courier" size="2"> FIELD1 </font>etc. Note that mapping&nbsp; fields may also be extracted directly by, e.g.<font face="Courier" size="2"> W.DATA</font>.</p>
+<p> List of field names (see also<font face="Courier" size="2"> MAPPING) </font><br></p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MAPPING_FILE&nbsp;&nbsp;name&nbsp;of&nbsp;the&nbsp;routine&nbsp;used&nbsp;for&nbsp;learning&nbsp;or&nbsp;executing&nbsp;the&nbsp;mapping
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MAPPING_TYPE&nbsp;&nbsp;string&nbsp;defining&nbsp;the&nbsp;type&nbsp;of&nbsp;mapping:
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'untrained',&nbsp;'trained',&nbsp;"combiner'&nbsp;or&nbsp;'fixed'.
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DATA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data,&nbsp;structure&nbsp;or&nbsp;cell&nbsp;array&nbsp;needed&nbsp;for&nbsp;defining&nbsp;the&nbsp;mapping.
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LABELS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array&nbsp;with&nbsp;labels&nbsp;to&nbsp;be&nbsp;used&nbsp;as&nbsp;feature&nbsp;labels&nbsp;for&nbsp;the&nbsp;dataset
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;created&nbsp;by&nbsp;executing&nbsp;the&nbsp;mapping.
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SIZE_IN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;input&nbsp;dimensionality&nbsp;or&nbsp;size&nbsp;vector&nbsp;describing&nbsp;its&nbsp;shape.
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SIZE_OUT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;output&nbsp;dimensionality&nbsp;or&nbsp;size&nbsp;vector&nbsp;describing&nbsp;its&nbsp;shape.
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SCALE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;output&nbsp;multiplication&nbsp;factor&nbsp;or&nbsp;vector.
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OUT_CONV&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0,1,2,3&nbsp;for&nbsp;defining&nbsp;the&nbsp;desired&nbsp;output&nbsp;conversion:
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;-&nbsp;no&nbsp;(default),&nbsp;1&nbsp;-&nbsp;SIGM,&nbsp;2&nbsp;NORMM&nbsp;or&nbsp;3&nbsp;-&nbsp;SIGM&nbsp;and&nbsp;NORMM.
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;COST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;classification&nbsp;cost&nbsp;matrix
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;with&nbsp;mapping&nbsp;name.
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;USER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;user&nbsp;definable&nbsp;variable.
+</font><br><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VERSION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;version&nbsp;field
+</font><br></p><h3> Example(s)</h3><p>
+<font face="Courier" size="2">&nbsp;[DATA,LABELS]&nbsp;=&nbsp;GET(W,'data','labels')
+</font><br></p><h3> See also</h3><p>
+<font face="Courier" size="3"><a href="../prtools/datasets.html">datasets</a>, <a href="../prtools/mappings.html">mappings</a>, mapping, </font></p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

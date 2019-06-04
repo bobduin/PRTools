@@ -1,0 +1,17 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="0" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><head><title>addpostproc</title></head>
+<p align="center"><font face="Courier" size=5><strong>ADDPOSTPROC</strong></font></p>
+<h3> Add mapppings in POSTPROC field of a datafile
+</h3>
+<p>
+</p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;A = ADDPOSTPROC(A,MAPPING)</font><br>
+<font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;A = ADDPOSTPROC(A)</font><br>
+</p>
+<p></p><p>
+<table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="100"><font size="4"><strong>Input</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;A</font></td><td valign="baseline"> Datafile<tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;POSTPROC</font></td><td valign="baseline"> Postprocessing mapping command</td></tr></table>
+</p><p><table cellspacing="0" cellpadding="3" width="100%" align="center" border="0"<tr> <td width="120"><font size="4"><strong>Output</strong></font></td><tr> <td width="120" valign="baseline"><font face="Courier" size="2">&nbsp;A</font></td><td valign="baseline"> Datafile</td></tr></table>
+</p><h3> Description</h3><p> Extends the set of mappings stored in<font face="Courier" size="2"> A.POSTPROC</font>.&nbsp; Existing mappings are extended sequentially<br></p>
+<p><font face="Courier" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A.POSTPROC&nbsp;=&nbsp;A.POSTPROC&nbsp;*&nbsp;MAPPING
+</font><br></p>
+<p> Mappings in<font face="Courier" size="2"> A.POSTPROC </font>are stored only and executed just&nbsp; after<font face="Courier" size="2"> A </font>is converted from a<font face="Courier" size="2"> DATAFILE </font>into a<font face="Courier" size="2"> PRDATASET</font>.&nbsp; The feature size of the datafile<font face="Courier" size="2"> A </font>is reset to the output&nbsp; size of<font face="Courier" size="2"> PRMAPPING</font>.&nbsp; The<font face="Courier" size="2"> POSTPROC </font>field of<font face="Courier" size="2"> A </font>can be reset by<font face="Courier" size="2"> SETPOSTPROC</font>.</p><h3> See also</h3><p>
+<font face="Courier" size="3"><a href="../prtools/datafiles.html">datafiles</a>, <a href="../@prdatafile/setpreproc.html">setpreproc</a>, <a href="../@prmapping/setpostproc.html">setpostproc</a>, </font></p><table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="../prtools.html">PRTools Contents</a></td><td><p align="right"><a href="http://37steps.com/prtools/" target="_top">PRTools User Guide</a></p></td></tr></table><table border="0" cellspacing="0" cellpadding="3" width="100%"><tr><td align="center"><em>This file has been automatically generated. If badly readable, use the help-command in Matlab.</em></td></tr></table></table></body></html>

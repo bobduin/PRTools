@@ -1,0 +1,532 @@
+<html><body bgcolor="#3030a0"><table bgcolor="#eeeeee"  border="5" cellspacing="2" cellpadding="5" width="700" white-space="normal"  align="center"><tr><td>
+<table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="http://prtools.tudelft.nl/" target="_top">PRTools website</a></td>
+<td><p align="right"><a href="http://37steps.com/prtools" target="_top">PRTools Guide</a></p></td></tr></table>
+<head><title>PRTools</title></head>
+<body bgcolor="#ffffff"><h3 align="center">PRTOOLS</h3><h3 align="center"> Pattern Recognition Tools (<a href="http://37steps.com/prtools">PRTools Guide</a>)
+<br> Version 5.4.1 18-Mar-2018
+</h3></p>
+<p>
+<h3>Datasets and Mappings (just most important routines)</h3>
+<table cellspacing="2" cellpadding="0" width="100%" align="center" border="0">
+
+
+<tr> <td width="20%"><a href="@prdataset/prdataset.html">prdataset</a> </td><td>Define dataset from datamatrix and labels</td></tr>
+<tr> <td width="20%"><a href="prtools/datasets.html">datasets</a> </td><td>List information on datasets (just help, no command)</td></tr>
+<tr> <td width="20%"><a href="@prdatafile/prdatafile.html">prdatafile</a> </td><td>Define dataset from directory of object files</td></tr>
+<tr> <td width="20%"><a href="prtools/datafiles.html">datafiles</a> </td><td>List information on datafiles (just help, no command)</td></tr>
+<tr> <td width="20%"><a href="prtools/cat2dset.html">cat2dset</a> </td><td>Create categorical dataset</td></tr>
+<tr> <td width="20%"><a href="prtools/cat2feat.html">cat2feat</a> </td><td>Conversion of categarical data to features</td></tr>
+<tr> <td width="20%"><a href="prtools/cat2real.html">cat2real</a> </td><td>Conversion categorical features to real by one-hot encoding</td></tr>
+<tr> <td width="20%"><a href="prtools/classnames.html">classnames</a> </td><td>Retrieve names of classes</td></tr>
+<tr> <td width="20%"><a href="prtools/classsizes.html">classsizes</a> </td><td>Retrieve sizes of classes</td></tr>
+<tr> <td width="20%"><a href="prtools/cell2dset.html">cell2dset</a> </td><td>Create dataset from cell array</td></tr>
+<tr> <td width="20%"><a href="prtools/dset2cell.html">dset2cell</a> </td><td>Convert dataset to cell array</td></tr>
+<tr> <td width="20%"><a href="prtools/feat2lab.html">feat2lab</a> </td><td>Label dataset by one of its features and remove this feature</td></tr>
+<tr> <td width="20%"><a href="prtools/feattypes.html">feattypes</a> </td><td>Determine feature types in dataset</td></tr>
+<tr> <td width="20%"><a href="prtools/gencirc.html">gencirc</a> </td><td>Generation of a one-class circular dataset</td></tr>
+<tr> <td width="20%"><a href="prtools/genclass.html">genclass</a> </td><td>Generate class frequency distribution</td></tr>
+<tr> <td width="20%"><a href="prtools/genlab.html">genlab</a> </td><td>Generate dataset labels</td></tr>
+<tr> <td width="20%"><a href="prtools/getlab.html">getlab</a> </td><td>Retrieve object labels from datasets and mappings</td></tr>
+<tr> <td width="20%"><a href="@prdataset/getnlab.html">getnlab</a> </td><td>Retrieve nummeric object labels from dataset</td></tr>
+<tr> <td width="20%"><a href="@prdataset/setfeatlab.html">setfeatlab</a> </td><td>Set feature labels in dataset</td></tr>
+<tr> <td width="20%"><a href="@prdataset/getfeatlab.html">getfeatlab</a> </td><td>Get feature labels in dataset</td></tr>
+<tr> <td width="20%"><a href="prtools/getfeat.html">getfeat</a> </td><td>Retrieve feature labels from datasets and mappings</td></tr>
+<tr> <td width="20%"><a href="prtools/setdat.html">setdat</a> </td><td>Change data in dataset for classifier output</td></tr>
+<tr> <td width="20%"><a href="prtools/setdata.html">setdata</a> </td><td>Change data in dataset or mapping</td></tr>
+<tr> <td width="20%"><a href="@prmapping/getdata.html">getdata</a> </td><td>Retrieve data from dataset or mapping</td></tr>
+<tr> <td width="20%"><a href="@prdataset/setlabels.html">setlabels</a> </td><td>Change labels of dataset or mapping</td></tr>
+<tr> <td width="20%"><a href="@prmapping/getlabels.html">getlabels</a> </td><td>Retrieve labels from a dataset</td></tr>
+<tr> <td width="20%"><a href="@prdataset/setprior.html">setprior</a> </td><td>Reset class prior probabilities of dataset</td></tr>
+<tr> <td width="20%"><a href="@prdataset/getprior.html">getprior</a> </td><td>Retrieve class prior probabilities from dataset</td></tr>
+<tr> <td width="20%"><a href="@prdataset/addlabels.html">addlabels</a> </td><td>Add additional labelling</td></tr>
+<tr> <td width="20%"><a href="@prdataset/changelablist.html">changelablist</a> </td><td>Change current active labeling</td></tr>
+<tr> <td width="20%"><a href="prtools/misval.html">misval</a> </td><td>Fix missing values in a dataset</td></tr>
+<tr> <td width="20%"><a href="prtools/multi_labeling.html">multi_labeling</a> </td><td>List information on multi-labeling (help only)</td></tr>
+<tr> <td width="20%"><a href="@prmapping/prmapping.html">prmapping</a> </td><td>Define and retrieve mapping and classifier from data</td></tr>
+<tr> <td width="20%"><a href="prtools/mappings.html">mappings</a> </td><td>List information on mappings (just help, no command)</td></tr>
+<tr> <td width="20%"><a href="prtools/renumlab.html">renumlab</a> </td><td>Convert labels to numbers</td></tr>
+<tr> <td width="20%"><a href="prtools/matchlab.html">matchlab</a> </td><td>Match different labelings</td></tr>
+<tr> <td width="20%"><a href="prtools/prarff.html">prarff</a> </td><td>Convert ARFF file (WEKA) to PRTools dataset</td></tr>
+<tr> <td width="20%"><a href="prtools/remclass.html">remclass</a> </td><td>Remove a class from a dataset</td></tr>
+<tr> <td width="20%"><a href="prtools/seldat.html">seldat</a> </td><td>Retrieve a part of a dataset</td></tr>
+<tr> <td width="20%"><a href="prtools/selclass.html">selclass</a> </td><td>Retrieve a class from a dataset</td></tr>
+</table></p>
+<p>
+<h3>Data Generation (more in prdatasets)</h3>
+<table cellspacing="2" cellpadding="0" width="100%" align="center" border="0">
+
+
+<tr> <td width="20%"><a href="prtools/circles3d.html">circles3d</a> </td><td>Create a dataset containing 2 circles in 3 dimensions</td></tr>
+<tr> <td width="20%"><a href="prtools/lines5d.html">lines5d</a> </td><td>Create a dataset containing 3 lines in 5 dimensions</td></tr>
+<tr> <td width="20%"><a href="prtools/gendat.html">gendat</a> </td><td>Random sampling of datasets for training and testing</td></tr>
+<tr> <td width="20%"><a href="prtools/gensubsets.html">gensubsets</a> </td><td>Generation of a consistent series of subsets of a dataset</td></tr>
+<tr> <td width="20%"><a href="prtools/gendatgauss.html">gendatgauss</a> </td><td>Generation of multivariate Gaussian distributed data</td></tr>
+<tr> <td width="20%"><a href="prtools/gendatb.html">gendatb</a> </td><td>Generation of banana shaped classes</td></tr>
+<tr> <td width="20%"><a href="prtools/gendatc.html">gendatc</a> </td><td>Generation of circular classes</td></tr>
+<tr> <td width="20%"><a href="prtools/gendatd.html">gendatd</a> </td><td>Generation of two difficult classes</td></tr>
+<tr> <td width="20%"><a href="prtools/gendatg.html">gendatg</a> </td><td>Generation of Gaussian circle and blob</td></tr>
+<tr> <td width="20%"><a href="prtools/gendath.html">gendath</a> </td><td>Generation of Highleyman classes</td></tr>
+<tr> <td width="20%"><a href="prtools/gendati.html">gendati</a> </td><td>Generation of random windows from images</td></tr>
+<tr> <td width="20%"><a href="prtools/gendatk.html">gendatk</a> </td><td>Nearest neighbour data generation</td></tr>
+<tr> <td width="20%"><a href="prtools/gendatl.html">gendatl</a> </td><td>Generation of Lithuanian classes</td></tr>
+<tr> <td width="20%"><a href="prtools/gendatm.html">gendatm</a> </td><td>Generation of 8 2d classes</td></tr>
+<tr> <td width="20%"><a href="prtools/gendatmm.html">gendatmm</a> </td><td>Generation of 4 multi-modal 2d classes</td></tr>
+<tr> <td width="20%"><a href="prtools/gendatp.html">gendatp</a> </td><td>Parzen density data generation</td></tr>
+<tr> <td width="20%"><a href="prtools/gendatr.html">gendatr</a> </td><td>Generate regression dataset from data and target values</td></tr>
+<tr> <td width="20%"><a href="prtools/gendats.html">gendats</a> </td><td>Generation of two Gaussian distributed classes</td></tr>
+<tr> <td width="20%"><a href="prtools/gendatu.html">gendatu</a> </td><td>Generation of uniform circle and blob</td></tr>
+<tr> <td width="20%"><a href="prtools/gendatv.html">gendatv</a> </td><td>Generation of a very large dataset</td></tr>
+<tr> <td width="20%"><a href="prtools/gendatw.html">gendatw</a> </td><td>Sample dataset by given weigths</td></tr>
+<tr> <td width="20%"><a href="prtools/gentrunk.html">gentrunk</a> </td><td>Generation of Trunk's example</td></tr>
+<tr> <td width="20%"><a href="prtools/genmdat.html">genmdat</a> </td><td>Generation of a multi-dimensional dataset</td></tr>
+<tr> <td width="20%"><a href="prtools/prdata.html">prdata</a> </td><td>Read data from file</td></tr>
+<tr> <td width="20%"><a href="prtools/seldat.html">seldat</a> </td><td>Select classes / features / objects from dataset</td></tr>
+<tr> <td width="20%"><a href="prtools/spirals.html">spirals</a> </td><td>Generation of a two-class spiral dataset</td></tr>
+<tr> <td width="20%"><a href="prtools/getwindows.html">getwindows</a> </td><td>Get pixel feature vectors around given pixels in image dataset</td></tr>
+<tr> <td width="20%"><a href="@prdataset/prdataset.html">prdataset</a> </td><td>Read existing dataset from file</td></tr>
+<tr> <td width="20%"><a href="prtools/prdatasets.html">prdatasets</a> </td><td>Overview and download of standard datasets</td></tr>
+</table></p>
+<p>
+<h3>Datafiles</h3>
+<table cellspacing="2" cellpadding="0" width="100%" align="center" border="0">
+
+
+<tr> <td width="20%"><a href="@prdatafile/prdatafile.html">prdatafile</a> </td><td>Define datafile from set of files in directory</td></tr>
+<tr> <td width="20%"><a href="prtools/createdatafile.html">createdatafile</a> </td><td>Save datafile, store intermediate result as raw datafile</td></tr>
+<tr> <td width="20%"><a href="prtools/savedatafile.html">savedatafile</a> </td><td>Save datafile, store intermediate result as mature datafile</td></tr>
+<tr> <td width="20%"><a href="prtools/filtm.html">filtm</a> </td><td>Mapping for arbitrary processing of a datafile</td></tr>
+<tr> <td width="20%"><a href="prtools/prdatafiles.html">prdatafiles</a> </td><td>Overview and download of standard datafiles</td></tr>
+</table></p>
+<p>
+<h3>Linear and Quadratic Classifiers</h3>
+<table cellspacing="2" cellpadding="0" width="100%" align="center" border="0">
+
+
+<tr> <td width="20%"><a href="prtools/fisherc.html">fisherc</a> </td><td>Minimum least square linear classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/ldc.html">ldc</a> </td><td>Normal densities based linear (muli-class) classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/loglc.html">loglc</a> </td><td>Logistic linear classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/logmlc.html">logmlc</a> </td><td>Logistic Multi-Class Linear Classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/nmc.html">nmc</a> </td><td>Nearest mean linear classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/nmsc.html">nmsc</a> </td><td>Scaled nearest mean linear classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/quadrc.html">quadrc</a> </td><td>Quadratic classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/qdc.html">qdc</a> </td><td>Normal densities based quadratic (multi-class) classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/udc.html">udc</a> </td><td>Uncorrelated normal densities based quadratic classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/klldc.html">klldc</a> </td><td>Linear classifier based on KL expansion of common cov matrix</td></tr>
+<tr> <td width="20%"><a href="prtools/pcldc.html">pcldc</a> </td><td>Linear classifier based on PCA expansion on the joint data</td></tr>
+<tr> <td width="20%"><a href="prtools/polyc.html">polyc</a> </td><td>Add polynomial features and run arbitrary classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/subsc.html">subsc</a> </td><td>Subspace classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/statslinc.html">statslinc</a>*</td><td>Linear classifier from the Stats toolbox</td></tr>
+</table>
+
+
+<table cellspacing="2" cellpadding="0" width="100%" align="center" border="0">
+<tr> <td width="20%"><a href="prtools/classc.html">classc</a> </td><td>Converts a mapping into a classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/labeld.html">labeld</a> </td><td>Find labels of objects by classification</td></tr>
+<tr> <td width="20%"><a href="prtools/rejectc.html">rejectc</a> </td><td>Creates reject version of exisiting classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/testc.html">testc</a> </td><td>General error estimation routine for trained classifiers</td></tr>
+</table></p>
+<p>
+<h3>Other Classifiers</h3>
+<table cellspacing="2" cellpadding="0" width="100%" align="center" border="0">
+
+
+<tr> <td width="20%"><a href="prtools/knnc.html">knnc</a> </td><td>k-nearest neighbour classifier (find k, build classifier)</td></tr>
+<tr> <td width="20%"><a href="prtools/fnnc.html">fnnc</a> </td><td>fast nearest neighbor classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/testk.html">testk</a> </td><td>Error estimation for k-nearest neighbour rule</td></tr>
+<tr> <td width="20%"><a href="prtools/edicon.html">edicon</a> </td><td>Edit and condense training sets</td></tr>
+<tr> <td width="20%"><a href="prtools/statsknnc.html">statsknnc</a>*</td><td>k-nearest neighbour classifier from the Stats toolbox</td></tr>
+</table></p>
+<p>
+<table cellspacing="2" cellpadding="0" width="100%" align="center" border="0">
+<tr> <td width="20%"><a href="prtools/weakc.html">weakc</a> </td><td>Weak classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/stumpc.html">stumpc</a> </td><td>Decision stump classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/adaboostc.html">adaboostc</a> </td><td>ADABoost classifier</td></tr>
+</table></p>
+<p>
+<table cellspacing="2" cellpadding="0" width="100%" align="center" border="0">
+<tr> <td width="20%"><a href="prtools/parzenc.html">parzenc</a> </td><td>Parzen classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/parzendc.html">parzendc</a> </td><td>Parzen density based classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/testp.html">testp</a> </td><td>Error estimation for Parzen classifier</td></tr>
+</table></p>
+<p>
+<table cellspacing="2" cellpadding="0" width="100%" align="center" border="0">
+<tr> <td width="20%"><a href="prtools/treec.html">treec</a> </td><td>Construct binary decision tree classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/dtc.html">dtc</a> </td><td>Decision tree classifier, rewritten, also for nominal features</td></tr>
+<tr> <td width="20%"><a href="prtools/statsdtc.html">statsdtc</a>*</td><td>Decision tree classifier from the Stats toolbox</td></tr>
+<tr> <td width="20%"><a href="prtools/randomforestc.html">randomforestc</a> </td><td>Breiman's random forest classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/naivebc.html">naivebc</a> </td><td>Naive Bayes classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/statsnbc.html">statsnbc</a>*</td><td>Naive Bayes classifier from the Stats toolbox</td></tr>
+<tr> <td width="20%"><a href="prtools/bpxnc.html">bpxnc</a>*</td><td>Feed forward neural network classifier by backpropagation</td></tr>
+<tr> <td width="20%"><a href="prtools/lmnc.html">lmnc</a>*</td><td>Feed forward neural network by Levenberg-Marquardt rule</td></tr>
+<tr> <td width="20%"><a href="prtools/neurc.html">neurc</a>*</td><td>Automatic neural network classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/perlc.html">perlc</a> </td><td>Linear perceptron</td></tr>
+<tr> <td width="20%"><a href="prtools/rbnc.html">rbnc</a>*</td><td>Radial basis neural network classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/rnnc.html">rnnc</a>*</td><td>Random neural network classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/ffnc.html">ffnc</a>*</td><td>Feed-forward neural net classifier back-end routine</td></tr>
+<tr> <td width="20%"><a href="prtools/bagc.html">bagc</a> </td><td>Feature set classifier, e.g. for multiple-instance learning</td></tr>
+</table></p>
+<p>
+<table cellspacing="2" cellpadding="0" width="100%" align="center" border="0">
+<tr> <td width="20%"><a href="prtools/fdsc.html">fdsc</a> </td><td>Feature based dissimilarity space classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/mdsc.html">mdsc</a>*</td><td>Manhatten distance feature based dissimilarity space classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/vpc.html">vpc</a> </td><td>Voted perceptron classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/drbmc.html">drbmc</a> </td><td>Discriminative restricted Boltzmann machine classifier</td></tr>
+</table></p>
+<p>
+<table cellspacing="2" cellpadding="0" width="100%" align="center" border="0">
+<tr> <td width="20%"><a href="prtools/libsvc.html">libsvc</a>*</td><td>Support vector classifier by LIBSVM</td></tr>
+<tr> <td width="20%"><a href="prtools/pklibsvc.html">pklibsvc</a>*</td><td>Radial basis LIBSVM using the Parzen kernel</td></tr>
+<tr> <td width="20%"><a href="prtools/rblibsvc.html">rblibsvc</a>*</td><td>Radial basis LIBSVM with optimised kernel</td></tr>
+<tr> <td width="20%"><a href="prtools/nulibsvc.html">nulibsvc</a>*</td><td>Support vector classifier by LIBSVM</td></tr>
+<tr> <td width="20%"><a href="prtools/svc.html">svc</a> </td><td>Support vector classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/nusvc.html">nusvc</a> </td><td>Support vector classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/pksvc.html">pksvc</a> </td><td>Radial basis SV classifier using the Parzen kernel</td></tr>
+<tr> <td width="20%"><a href="prtools/rbsvc.html">rbsvc</a> </td><td>Radial basis SV classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/statssvc.html">statssvc</a>*</td><td>Support vector classifier (Stats toolbox)</td></tr>
+<tr> <td width="20%"><a href="prtools/pkstatssvc.html">pkstatssvc</a>*</td><td>Radial basis Parzen kernel SV classifier (Stats toolbox)</td></tr>
+<tr> <td width="20%"><a href="prtools/rbstatssvc.html">rbstatssvc</a>*</td><td>Radial basis optimised kernel SV classifier (Stats toolbox)</td></tr>
+<tr> <td width="20%"><a href="prtools/kernelc.html">kernelc</a> </td><td>General kernel/dissimilarity based classification</td></tr>
+<tr> <td width="20%"><a href="prtools/onec.html">onec</a> </td><td>fallback routine for degenerated training sets</td></tr>
+</table></p>
+<p>
+<h3>Normal Density Based Classification</h3>
+<table cellspacing="2" cellpadding="0" width="100%" align="center" border="0">
+
+
+<tr> <td width="20%"><a href="prtools/distmaha.html">distmaha</a> </td><td>Mahalanobis distance</td></tr>
+<tr> <td width="20%"><a href="prtools/meancov.html">meancov</a> </td><td>Estimation of means and covariance matrices from multiclass data</td></tr>
+<tr> <td width="20%"><a href="prtools/nbayesc.html">nbayesc</a> </td><td>Bayes classifier for given normal densities</td></tr>
+<tr> <td width="20%"><a href="prtools/ldc.html">ldc</a> </td><td>Normal densities based linear (muli-class) classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/qdc.html">qdc</a> </td><td>Normal densities based quadratic (multi-class) classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/udc.html">udc</a> </td><td>Uncorrelated normal densities based quadratic classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/mogc.html">mogc</a> </td><td>Mixture of gaussians classification</td></tr>
+<tr> <td width="20%"><a href="prtools/testn.html">testn</a> </td><td>Error estimate of discriminant on normal distributions</td></tr>
+</table></p>
+<p>
+<h3>Feature Selection</h3>
+<table cellspacing="2" cellpadding="0" width="100%" align="center" border="0">
+
+
+<tr> <td width="20%"><a href="prtools/feateval.html">feateval</a> </td><td>Evaluation of a feature set</td></tr>
+<tr> <td width="20%"><a href="prtools/featrank.html">featrank</a> </td><td>Ranking of individual feature permormances</td></tr>
+<tr> <td width="20%"><a href="prtools/featsel.html">featsel</a> </td><td>Feature Selection</td></tr>
+<tr> <td width="20%"><a href="prtools/featselb.html">featselb</a> </td><td>Backward feature selection</td></tr>
+<tr> <td width="20%"><a href="prtools/featself.html">featself</a> </td><td>Forward feature selection</td></tr>
+<tr> <td width="20%"><a href="prtools/featsellr.html">featsellr</a> </td><td>Plus-l-takeaway-r feature selection</td></tr>
+<tr> <td width="20%"><a href="prtools/featseli.html">featseli</a> </td><td>Feature selection on individual performance</td></tr>
+<tr> <td width="20%"><a href="prtools/featselm.html">featselm</a> </td><td>Feature selection map, general routine for feature selection</td></tr>
+<tr> <td width="20%"><a href="prtools/featselo.html">featselo</a> </td><td>Branch and bound feature selection</td></tr>
+<tr> <td width="20%"><a href="prtools/featselp.html">featselp</a> </td><td>Floating forward feature selection</td></tr>
+<tr> <td width="20%"><a href="prtools/featselv.html">featselv</a> </td><td>Selection of varying features</td></tr>
+</table></p>
+<p>
+<h3>Classifiers and tests (general)</h3>
+<table cellspacing="2" cellpadding="0" width="100%" align="center" border="0">
+
+
+<tr> <td width="20%"><a href="prtools/bayesc.html">bayesc</a> </td><td>Bayes classifier by combining density estimates</td></tr>
+<tr> <td width="20%"><a href="prtools/classim.html">classim</a> </td><td>Classify image using a given classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/classc.html">classc</a> </td><td>Convert mapping to classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/labeld.html">labeld</a> </td><td>Find labels of objects by classification</td></tr>
+<tr> <td width="20%"><a href="prtools/cleval.html">cleval</a> </td><td>Classifier evaluation (learning curve)</td></tr>
+<tr> <td width="20%"><a href="prtools/clevalb.html">clevalb</a> </td><td>Classifier evaluation (learning curve), bootstrap version</td></tr>
+<tr> <td width="20%"><a href="prtools/clevalf.html">clevalf</a> </td><td>Classifier evaluation (feature size curve)</td></tr>
+<tr> <td width="20%"><a href="prtools/clevals.html">clevals</a> </td><td>Classifier evaluation (feature /learning curve), bootstrap</td></tr>
+<tr> <td width="20%"><a href="prtools/confmat.html">confmat</a> </td><td>Computation of confusion matrix</td></tr>
+<tr> <td width="20%"><a href="prtools/costm.html">costm</a> </td><td>Cost mapping, classification using costs</td></tr>
+<tr> <td width="20%"><a href="prtools/prcrossval.html">prcrossval</a> </td><td>Crossvalidation</td></tr>
+<tr> <td width="20%"><a href="prtools/cnormc.html">cnormc</a> </td><td>Normalisation of classifiers</td></tr>
+<tr> <td width="20%"><a href="prtools/disperror.html">disperror</a> </td><td>Display error matrix with information on classifiers and datasets</td></tr>
+<tr> <td width="20%"><a href="prtools/labelim.html">labelim</a> </td><td>Construct image of labeled pixels</td></tr>
+<tr> <td width="20%"><a href="prtools/logdens.html">logdens</a> </td><td>Convert density estimates to log-densities for more accuracy</td></tr>
+<tr> <td width="20%"><a href="prtools/loso.html">loso</a> </td><td>Leave_one_set_out crossvalidation</td></tr>
+<tr> <td width="20%"><a href="prtools/mclassc.html">mclassc</a> </td><td>Computation of multi-class classifier from 2-class discriminants</td></tr>
+<tr> <td width="20%"><a href="prtools/regoptc.html">regoptc</a> </td><td>Optimisation of regularisation and complexity parameters</td></tr>
+<tr> <td width="20%"><a href="prtools/reject.html">reject</a> </td><td>Compute error-reject trade-off curve</td></tr>
+<tr> <td width="20%"><a href="prtools/prroc.html">prroc</a> </td><td>Receiver-operator curve (ROC)</td></tr>
+<tr> <td width="20%"><a href="prtools/shiftop.html">shiftop</a> </td><td>Shift operating point of classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/testc.html">testc</a> </td><td>General error estimation routine for trained classifiers</td></tr>
+<tr> <td width="20%"><a href="prtools/testd.html">testd</a> </td><td>Error of dataset applied to given classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/testauc.html">testauc</a> </td><td>Estimate error as area under the ROC</td></tr>
+</table></p>
+<p>
+<h3>Mappings</h3>
+<table cellspacing="2" cellpadding="0" width="100%" align="center" border="0">
+
+
+<tr> <td width="20%"><a href="prtools/affine.html">affine</a> </td><td>Construct affine (linear) mapping from parameters</td></tr>
+<tr> <td width="20%"><a href="prtools/bhatm.html">bhatm</a> </td><td>Two-class Bhattacharryya mapping</td></tr>
+<tr> <td width="20%"><a href="prtools/cmapm.html">cmapm</a> </td><td>Compute some special maps</td></tr>
+<tr> <td width="20%"><a href="prtools/copulam.html">copulam</a> </td><td>Compute copula mapping</td></tr>
+<tr> <td width="20%"><a href="prtools/datasetm.html">datasetm</a> </td><td>Mapping conversion dataset</td></tr>
+<tr> <td width="20%"><a href="prtools/disnorm.html">disnorm</a> </td><td>Normalisation of a dissimilarity matrix</td></tr>
+<tr> <td width="20%"><a href="prtools/featselm.html">featselm</a> </td><td>Feature selection map, general routine for feature selection</td></tr>
+<tr> <td width="20%"><a href="prtools/fisherm.html">fisherm</a> </td><td>Fisher mapping</td></tr>
+<tr> <td width="20%"><a href="prtools/chernoffm.html">chernoffm</a> </td><td>Chernoff mapping</td></tr>
+<tr> <td width="20%"><a href="prtools/invsigm.html">invsigm</a> </td><td>Inverse sigmoid map</td></tr>
+<tr> <td width="20%"><a href="prtools/filtm.html">filtm</a> </td><td>Arbitrary operation on datafiles/datasets, object by object</td></tr>
+<tr> <td width="20%"><a href="prtools/mapm.html">mapm</a> </td><td>Arbitrary mapping operation on doubles and datasets</td></tr>
+<tr> <td width="20%"><a href="prtools/gaussm.html">gaussm</a> </td><td>Mixture of Gaussians density estimation</td></tr>
+<tr> <td width="20%"><a href="prtools/kernelm.html">kernelm</a> </td><td>Kernel mapping</td></tr>
+<tr> <td width="20%"><a href="prtools/klm.html">klm</a> </td><td>Decorrelation and Karhunen Loeve mapping (PCA)</td></tr>
+<tr> <td width="20%"><a href="prtools/klms.html">klms</a> </td><td>Scaled version of klm, useful for prewhitening</td></tr>
+<tr> <td width="20%"><a href="prtools/knnm.html">knnm</a> </td><td>k-Nearest neighbor density estimation</td></tr>
+<tr> <td width="20%"><a href="prtools/mapsd.html">mapsd</a> </td><td>Train mapping between two representations</td></tr>
+<tr> <td width="20%"><a href="prtools/mclassm.html">mclassm</a> </td><td>Computation of mapping from multi-class dataset</td></tr>
+<tr> <td width="20%"><a href="prtools/prmap.html">prmap</a> </td><td>General routine for computing and executing mappings</td></tr>
+<tr> <td width="20%"><a href="prtools/mappingtools.html">mappingtools</a> </td><td>Macro defining some mappings</td></tr>
+<tr> <td width="20%"><a href="prtools/nlfisherm.html">nlfisherm</a> </td><td>Nonlinear Fisher mapping</td></tr>
+<tr> <td width="20%"><a href="prtools/normm.html">normm</a> </td><td>Object normalisation map</td></tr>
+<tr> <td width="20%"><a href="prtools/parzenm.html">parzenm</a> </td><td>Parzen density estimation</td></tr>
+<tr> <td width="20%"><a href="prtools/parzenml.html">parzenml</a> </td><td>Optimisation of smoothing parameter in Parzen density estimation.</td></tr>
+<tr> <td width="20%"><a href="prtools/pcam.html">pcam</a> </td><td>Principal Component Analysis</td></tr>
+<tr> <td width="20%"><a href="prtools/pcaklm.html">pcaklm</a> </td><td>Backend routine for PC and KL mappings</td></tr>
+<tr> <td width="20%"><a href="prtools/proxm.html">proxm</a> </td><td>Proximity mapping and kernel construction</td></tr>
+<tr> <td width="20%"><a href="prtools/reducm.html">reducm</a> </td><td>Reduce to minimal space mapping</td></tr>
+<tr> <td width="20%"><a href="prtools/remoutl.html">remoutl</a> </td><td>Remove outliers</td></tr>
+<tr> <td width="20%"><a href="prtools/rejectm.html">rejectm</a> </td><td>Creates rejecting mapping</td></tr>
+<tr> <td width="20%"><a href="prtools/scalem.html">scalem</a> </td><td>Compute scaling data</td></tr>
+<tr> <td width="20%"><a href="prtools/sigm.html">sigm</a> </td><td>Simoid mapping</td></tr>
+<tr> <td width="20%"><a href="prtools/spatm.html">spatm</a> </td><td>Augment image dataset with spatial label information</td></tr>
+<tr> <td width="20%"><a href="prtools/tsnem.html">tsnem</a> </td><td>tSNE mapping</td></tr>
+<tr> <td width="20%"><a href="prtools/sammonm.html">sammonm</a> </td><td>Multi-dimensional scaling by Sammon mapping</td></tr>
+<tr> <td width="20%"><a href="prtools/userkernel.html">userkernel</a> </td><td>User supplied kernel definition</td></tr>
+</table></p>
+<p>
+<table cellspacing="2" cellpadding="0" width="100%" align="center" border="0">
+<tr> <td width="20%"><a href="prtools/gtm.html">gtm</a> </td><td>Fit a Generative Topographic Mapping (GTM) by EM</td></tr>
+<tr> <td width="20%"><a href="prtools/plotgtm.html">plotgtm</a> </td><td>Plot a Generative Topographic Mapping in 2D</td></tr>
+<tr> <td width="20%"><a href="prtools/som.html">som</a> </td><td>Simple routine computing a Self-Organizing Map (SOM)</td></tr>
+<tr> <td width="20%"><a href="prtools/prplotsom.html">prplotsom</a> </td><td>Plot a Self-Organizing Map in 2D</td></tr>
+</table></p>
+<p>
+<h3>Classifier combiners</h3>
+<table cellspacing="2" cellpadding="0" width="100%" align="center" border="0">
+
+
+<tr> <td width="20%"><a href="prtools/averagec.html">averagec</a> </td><td>Combining linear classifiers by averaging coefficients</td></tr>
+<tr> <td width="20%"><a href="prtools/baggingc.html">baggingc</a> </td><td>Bootstrapping and aggregation of classifiers</td></tr>
+<tr> <td width="20%"><a href="prtools/dcsc.html">dcsc</a> </td><td>Dynamic Classifier Selecting Combiner</td></tr>
+<tr> <td width="20%"><a href="prtools/modselc.html">modselc</a> </td><td>Model Selection Combiner (Static selection)</td></tr>
+<tr> <td width="20%"><a href="prtools/rsscc.html">rsscc</a> </td><td>Random subspace combining classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/votec.html">votec</a> </td><td>Voting classifier combiner</td></tr>
+<tr> <td width="20%"><a href="prtools/wvotec.html">wvotec</a> </td><td>Weighted voting classifier combiner</td></tr>
+<tr> <td width="20%"><a href="prtools/maxc.html">maxc</a> </td><td>Maximum classifier combiner</td></tr>
+<tr> <td width="20%"><a href="prtools/minc.html">minc</a> </td><td>Minimum classifier combiner</td></tr>
+<tr> <td width="20%"><a href="prtools/meanc.html">meanc</a> </td><td>Mean classifier combiner</td></tr>
+<tr> <td width="20%"><a href="prtools/medianc.html">medianc</a> </td><td>Median classifier combiner</td></tr>
+<tr> <td width="20%"><a href="prtools/mlrc.html">mlrc</a> </td><td>Muli-response linear regression combiner</td></tr>
+<tr> <td width="20%"><a href="prtools/naivebcc.html">naivebcc</a> </td><td>Naive Bayes classifier combiner</td></tr>
+<tr> <td width="20%"><a href="prtools/perc.html">perc</a> </td><td>Percentile combiner</td></tr>
+<tr> <td width="20%"><a href="prtools/prodc.html">prodc</a> </td><td>Product classifier combiner</td></tr>
+<tr> <td width="20%"><a href="prtools/rfishercc.html">rfishercc</a> </td><td>Fisher combining of randomly generated classifiers</td></tr>
+<tr> <td width="20%"><a href="prtools/traincc.html">traincc</a> </td><td>Train combining classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/fixedcc.html">fixedcc</a> </td><td>Fixed combiner construction, back end</td></tr>
+<tr> <td width="20%"><a href="prtools/parsc.html">parsc</a> </td><td>Parse classifier or map</td></tr>
+<tr> <td width="20%"><a href="prtools/rejectc.html">rejectc</a> </td><td>Creates reject version of exisiting classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/parallel.html">parallel</a> </td><td>Parallel combining of classifiers</td></tr>
+<tr> <td width="20%"><a href="prtools/bagcc.html">bagcc</a> </td><td>Feature set combining classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/stacked.html">stacked</a> </td><td>Stacked combining of classifiers</td></tr>
+<tr> <td width="20%"><a href="prtools/sequential.html">sequential</a> </td><td>Sequential combining of classifiers</td></tr>
+</table></p>
+<p>
+</p>
+<p>
+<h3>Regression</h3>
+<table cellspacing="2" cellpadding="0" width="100%" align="center" border="0">
+
+
+<tr> <td width="20%"><a href="prtools/linearr.html">linearr</a> </td><td>Linear regression</td></tr>
+<tr> <td width="20%"><a href="prtools/ridger.html">ridger</a> </td><td>Ridge regression</td></tr>
+<tr> <td width="20%"><a href="prtools/lassor.html">lassor</a> </td><td>LASSO</td></tr>
+<tr> <td width="20%"><a href="prtools/svmr.html">svmr</a> </td><td>Support vector regression</td></tr>
+<tr> <td width="20%"><a href="prtools/ksmoothr.html">ksmoothr</a> </td><td>Kernel smoother</td></tr>
+<tr> <td width="20%"><a href="prtools/knnr.html">knnr</a> </td><td>k-nearest neighbor regression</td></tr>
+<tr> <td width="20%"><a href="prtools/pinvr.html">pinvr</a> </td><td>Pseudo-inverse regression</td></tr>
+<tr> <td width="20%"><a href="prtools/plsr.html">plsr</a> </td><td>Partial least squares regression</td></tr>
+<tr> <td width="20%"><a href="prtools/plsm.html">plsm</a> </td><td>Partial least squares mapping</td></tr>
+<tr> <td width="20%"><a href="prtools/gpr.html">gpr</a> </td><td>Gaussian Process regression</td></tr>
+</table></p>
+<p>
+<table cellspacing="2" cellpadding="0" width="100%" align="center" border="0">
+<tr> <td width="20%"><a href="prtools/testr.html">testr</a> </td><td>Mean squared regression error</td></tr>
+<tr> <td width="20%"><a href="prtools/rsquared.html">rsquared</a> </td><td>R^2-statistic</td></tr>
+</table></p>
+<p>
+<h3>Handling images in datasets and datafiles</h3>
+<table cellspacing="2" cellpadding="0" width="100%" align="center" border="0">
+
+
+<tr> <td width="20%"><a href="prtools/data2im.html">data2im</a> </td><td>Convert dataset to image</td></tr>
+<tr> <td width="20%"><a href="@prdataset/getobjsize.html">getobjsize</a> </td><td>Retrieve image size of feature images in datasets</td></tr>
+<tr> <td width="20%"><a href="@prdataset/getfeatsize.html">getfeatsize</a> </td><td>Retrieve image size of object images in datasets</td></tr>
+<tr> <td width="20%"><a href="prtools/obj2feat.html">obj2feat</a> </td><td>Transform object images to feature images in dataset</td></tr>
+<tr> <td width="20%"><a href="prtools/feat2obj.html">feat2obj</a> </td><td>Transform feature images to object images in dataset</td></tr>
+<tr> <td width="20%"><a href="prtools/im2feat.html">im2feat</a> </td><td>Convert image to feature in dataset</td></tr>
+<tr> <td width="20%"><a href="prtools/im2obj.html">im2obj</a> </td><td>Convert image to object in dataset</td></tr>
+<tr> <td width="20%"><a href="@prdataset/imsize.html">imsize</a> </td><td>Retrieve size of specific image in datafile</td></tr>
+<tr> <td width="20%"><a href="prtools/im_patch.html">im_patch</a> </td><td>Find / generate patches in object images</td></tr>
+<tr> <td width="20%"><a href="prtools/band2obj.html">band2obj</a> </td><td>Convert image bands to objects in dataset</td></tr>
+<tr> <td width="20%"><a href="prtools/bandsel.html">bandsel</a> </td><td>Select image bands in dataset or datafile</td></tr>
+<tr> <td width="20%"><a href="prtools/selectim.html">selectim</a> </td><td>Select image in multi-band object image dataset/datafile</td></tr>
+<tr> <td width="20%"><a href="prtools/show.html">show</a> </td><td>Display objects in datasets, datafiles and mappings</td></tr>
+<tr> <td width="20%"><a href="prtools/im_dbr.html">im_dbr</a> </td><td>Image Database Retrieval GUI</td></tr>
+</table></p>
+<p>
+<h3>Operations on images in datasets and datafiles</h3>
+<table cellspacing="2" cellpadding="0" width="100%" align="center" border="0">
+
+
+<tr> <td width="20%"><a href="prtools/classim.html">classim</a> </td><td>Classify image using a given classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/doublem.html">doublem</a> </td><td>Convert datafile images into double</td></tr>
+<tr> <td width="20%"><a href="prtools/filtim.html">filtim</a> </td><td>Image operation on objects in datafiles/datasets</td></tr>
+<tr> <td width="20%"><a href="prtools/spatm.html">spatm</a> </td><td>Augment image dataset with spatial label information</td></tr>
+<tr> <td width="20%"><a href="prtools/im_box.html">im_box</a> </td><td>Bounding box</td></tr>
+<tr> <td width="20%"><a href="prtools/im_center.html">im_center</a> </td><td>Center image</td></tr>
+<tr> <td width="20%"><a href="prtools/im_fft.html">im_fft</a> </td><td>FFT transform (and more)</td></tr>
+<tr> <td width="20%"><a href="prtools/im_gauss.html">im_gauss</a> </td><td>Gaussian filtering by Matlab</td></tr>
+<tr> <td width="20%"><a href="prtools/im_gray.html">im_gray</a> </td><td>Multi-band to gray-value conversion</td></tr>
+<tr> <td width="20%"><a href="prtools/im_hist_equalize.html">im_hist_equalize</a> </td><td>Histogram equalisation</td></tr>
+<tr> <td width="20%"><a href="prtools/im_invert.html">im_invert</a> </td><td>Invert image</td></tr>
+<tr> <td width="20%"><a href="prtools/im_label.html">im_label</a> </td><td>Labeling binary images</td></tr>
+<tr> <td width="20%"><a href="prtools/im_norm.html">im_norm</a> </td><td>Normalize images w.r.t. mean and variance</td></tr>
+<tr> <td width="20%"><a href="prtools/im_resize.html">im_resize</a> </td><td>Resize images</td></tr>
+<tr> <td width="20%"><a href="prtools/im_rotate.html">im_rotate</a> </td><td>Rotate images</td></tr>
+<tr> <td width="20%"><a href="prtools/im_scale.html">im_scale</a> </td><td>Scale images</td></tr>
+<tr> <td width="20%"><a href="prtools/im_select_blob.html">im_select_blob</a> </td><td>Select largest blob</td></tr>
+<tr> <td width="20%"><a href="prtools/im_stretch.html">im_stretch</a> </td><td>Contrast stretching of images</td></tr>
+<tr> <td width="20%"><a href="prtools/im_threshold.html">im_threshold</a> </td><td>Threshold images</td></tr>
+<tr> <td width="20%"><a href="prtools/im_unif.html">im_unif</a> </td><td>Uniform filtering</td></tr>
+</table></p>
+<p>
+<h3>Feature extraction from images in datasets and datafiles</h3>
+<table cellspacing="2" cellpadding="0" width="100%" align="center" border="0">
+
+
+<tr> <td width="20%"><a href="prtools/histm.html">histm</a> </td><td>Convert images to histograms. Trains the bin positions</td></tr>
+<tr> <td width="20%"><a href="prtools/im_hist.html">im_hist</a> </td><td>Convert images to histograms for fixed bin positions</td></tr>
+<tr> <td width="20%"><a href="prtools/im_harris.html">im_harris</a> </td><td>Find Harris points in images</td></tr>
+<tr> <td width="20%"><a href="prtools/im_moments.html">im_moments</a> </td><td>Computes moments as features from object images</td></tr>
+<tr> <td width="20%"><a href="prtools/im_mean.html">im_mean</a> </td><td>Computes center of gravity</td></tr>
+<tr> <td width="20%"><a href="prtools/im_measure.html">im_measure</a> </td><td>Computes some measurements</td></tr>
+<tr> <td width="20%"><a href="prtools/im_profile.html">im_profile</a> </td><td>Computes image profiles</td></tr>
+<tr> <td width="20%"><a href="prtools/im_skel_meas.html">im_skel_meas</a> </td><td>Skeleton measurements</td></tr>
+<tr> <td width="20%"><a href="prtools/im_stat.html">im_stat</a> </td><td>Compute some simple statistics</td></tr>
+</table></p>
+<p>
+<h3>Clustering and distances</h3>
+<table cellspacing="2" cellpadding="0" width="100%" align="center" border="0">
+
+
+<tr> <td width="20%"><a href="prtools/distm.html">distm</a> </td><td>Distance matrix between two data sets</td></tr>
+<tr> <td width="20%"><a href="prtools/emclust.html">emclust</a> </td><td>Expectation - maximisation clustering</td></tr>
+<tr> <td width="20%"><a href="prtools/proxm.html">proxm</a> </td><td>Proximity mapping and kernel construction</td></tr>
+<tr> <td width="20%"><a href="prtools/hclust.html">hclust</a> </td><td>Hierarchical clustering</td></tr>
+<tr> <td width="20%"><a href="prtools/kcentres.html">kcentres</a> </td><td>k-centres clustering</td></tr>
+<tr> <td width="20%"><a href="prtools/prkmeans.html">prkmeans</a> </td><td>k-means clustering</td></tr>
+<tr> <td width="20%"><a href="prtools/modeseek.html">modeseek</a> </td><td>Clustering by modeseeking</td></tr>
+</table></p>
+<p>
+<table cellspacing="2" cellpadding="0" width="100%" align="center" border="0">
+<tr> <td width="20%"><a href="prtools/mds.html">mds</a> </td><td>Non-linear mapping by multi-dimensional scaling (Sammon)</td></tr>
+<tr> <td width="20%"><a href="prtools/mds_cs.html">mds_cs</a> </td><td>Linear mapping by classical scaling</td></tr>
+<tr> <td width="20%"><a href="prtools/mds_init.html">mds_init</a> </td><td>Initialisation of multi-dimensional scaling</td></tr>
+<tr> <td width="20%"><a href="prtools/mds_stress.html">mds_stress</a> </td><td>Dissimilarity of distance matrices</td></tr>
+</table></p>
+<p>
+<h3>Plotting</h3>
+<table cellspacing="2" cellpadding="0" width="100%" align="center" border="0">
+
+
+<tr> <td width="20%"><a href="prtools/gridsize.html">gridsize</a> </td><td>Set gridsize used in the PRTools plot commands</td></tr>
+<tr> <td width="20%"><a href="prtools/plotc.html">plotc</a> </td><td>Plot discriminant function for two features</td></tr>
+<tr> <td width="20%"><a href="prtools/plote.html">plote</a> </td><td>Plot error curves</td></tr>
+<tr> <td width="20%"><a href="prtools/plotf.html">plotf</a> </td><td>Plot feature distribution</td></tr>
+<tr> <td width="20%"><a href="prtools/plotm.html">plotm</a> </td><td>Plot mapping</td></tr>
+<tr> <td width="20%"><a href="prtools/ploto.html">ploto</a> </td><td>Plot object functions</td></tr>
+<tr> <td width="20%"><a href="prtools/plotr.html">plotr</a> </td><td>Plot regression functions</td></tr>
+<tr> <td width="20%"><a href="prtools/plotdg.html">plotdg</a> </td><td>Plot dendrgram (see hclust)</td></tr>
+<tr> <td width="20%"><a href="prtools/scatterd.html">scatterd</a> </td><td>Scatterplot</td></tr>
+<tr> <td width="20%"><a href="prtools/scatterdui.html">scatterdui</a> </td><td>Scatterplot scatterplot with feature selection</td></tr>
+<tr> <td width="20%"><a href="prtools/scattern.html">scattern</a> </td><td>Simple, unannotated scatterplot, no axes.</td></tr>
+<tr> <td width="20%"><a href="prtools/scatterr.html">scatterr</a> </td><td>Scatter regression dataset</td></tr>
+<tr> <td width="20%"><a href="prtools/inpoly.html">inpoly</a> </td><td>Select objects in a scatterplot by drawing a polygon</td></tr>
+</table></p>
+<p>
+<h3>Various tests and support routines (many low-level routines not listed)</h3>
+<table cellspacing="2" cellpadding="0" width="100%" align="center" border="0">
+
+
+<tr> <td width="20%"><a href="prtools/cdats.html">cdats</a> </td><td>Support routine for checking datasets</td></tr>
+<tr> <td width="20%"><a href="prtools/concatm.html">concatm</a> </td><td>Concatenate cell array of mappings or datasets ({} --> [])</td></tr>
+<tr> <td width="20%"><a href="prtools/cleandset.html">cleandset</a> </td><td>Clean dataset for degenerate training sets</td></tr>
+<tr> <td width="20%"><a href="prtools/iscomdset.html">iscomdset</a> </td><td>Test on compatible datasets</td></tr>
+<tr> <td width="20%"><a href="prtools/isdataim.html">isdataim</a> </td><td>Test on image dataset</td></tr>
+<tr> <td width="20%"><a href="prtools/isdataset.html">isdataset</a> </td><td>Test on dataset</td></tr>
+<tr> <td width="20%"><a href="prtools/isfeatim.html">isfeatim</a> </td><td>Test on feature image dataset</td></tr>
+<tr> <td width="20%"><a href="prtools/ismapping.html">ismapping</a> </td><td>Test on mapping</td></tr>
+<tr> <td width="20%"><a href="prtools/ismisval.html">ismisval</a> </td><td>Test dataset on missing values</td></tr>
+<tr> <td width="20%"><a href="prtools/isobjim.html">isobjim</a> </td><td>Test on object image dataset</td></tr>
+<tr> <td width="20%"><a href="prtools/issequential.html">issequential</a> </td><td>Test on sequential mapping</td></tr>
+<tr> <td width="20%"><a href="prtools/isstacked.html">isstacked</a> </td><td>Test on stacked mapping</td></tr>
+<tr> <td width="20%"><a href="prtools/isparallel.html">isparallel</a> </td><td>Test on parallel mapping</td></tr>
+<tr> <td width="20%"><a href="prtools/issym.html">issym</a> </td><td>Test on symmetric matrix</td></tr>
+<tr> <td width="20%"><a href="prtools/isvaldset.html">isvaldset</a> </td><td>Test on valid dataset</td></tr>
+<tr> <td width="20%"><a href="prtools/isvaldfile.html">isvaldfile</a> </td><td>Test on valid datafile</td></tr>
+<tr> <td width="20%"><a href="prtools/matchlablist.html">matchlablist</a> </td><td>Match entries of label lists</td></tr>
+<tr> <td width="20%"><a href="prtools/mapex.html">mapex</a> </td><td>Train and execute mapping on the same dataset</td></tr>
+<tr> <td width="20%"><a href="prtools/labcmp.html">labcmp</a> </td><td>Compare two label lists and find the differences</td></tr>
+<tr> <td width="20%"><a href="prtools/nlabcmp.html">nlabcmp</a> </td><td>Compare two label lists and count the differences</td></tr>
+<tr> <td width="20%"><a href="prtools/testdatasize.html">testdatasize</a> </td><td>Check datasize and convert datafile to dataset</td></tr>
+<tr> <td width="20%"><a href="prtools/define_mapping.html">define_mapping</a> </td><td>Define empty mapping</td></tr>
+<tr> <td width="20%"><a href="prtools/mapping_task.html">mapping_task</a> </td><td>Check mapping task</td></tr>
+<tr> <td width="20%"><a href="prtools/trained_mapping.html">trained_mapping</a> </td><td>Defined trained mapping</td></tr>
+<tr> <td width="20%"><a href="prtools/trained_classifier.html">trained_classifier</a> </td><td>Define trained classifier</td></tr>
+<tr> <td width="20%"><a href="prtools/setdefaults.html">setdefaults</a> </td><td>Substitute defaults</td></tr>
+<tr> <td width="20%"><a href="prtools/shiftargin.html">shiftargin</a> </td><td>Conditional shift of input arguments</td></tr>
+<tr> <td width="20%"><a href="prtools/prload.html">prload</a> </td><td>Load prtools4 mat-files and convert to prtools5</td></tr>
+<tr> <td width="20%"><a href="prtools/prtools4to5.html">prtools4to5</a> </td><td>Convert prtools4 directory to prtools5</td></tr>
+</table></p>
+<p>
+<h3>Examples</h3>
+<table cellspacing="2" cellpadding="0" width="100%" align="center" border="0">
+
+
+<tr> <td width="20%"><a href="prtools/prex_cleval.html">prex_cleval</a> </td><td>learning curves</td></tr>
+<tr> <td width="20%"><a href="prtools/prex_combining.html">prex_combining</a> </td><td>classifier combining</td></tr>
+<tr> <td width="20%"><a href="prtools/prex_confmat.html">prex_confmat</a> </td><td>confusion matrix, scatterplot and gridsize</td></tr>
+<tr> <td width="20%"><a href="prtools/prex_datafile.html">prex_datafile</a> </td><td>datafile usage</td></tr>
+<tr> <td width="20%"><a href="prtools/prex_datasets.html">prex_datasets</a> </td><td>standard datasets</td></tr>
+<tr> <td width="20%"><a href="prtools/prex_density.html">prex_density</a> </td><td>Various density plots</td></tr>
+<tr> <td width="20%"><a href="prtools/prex_eigenfaces.html">prex_eigenfaces</a> </td><td>Use of images and eigenfaces</td></tr>
+<tr> <td width="20%"><a href="prtools/prex_matchlab.html">prex_matchlab</a> </td><td>K-means clustering and matching labels</td></tr>
+<tr> <td width="20%"><a href="prtools/prex_mcplot.html">prex_mcplot</a> </td><td>Multi-class classifier plot</td></tr>
+<tr> <td width="20%"><a href="prtools/prex_plotc.html">prex_plotc</a> </td><td>Dataset scatter and classifier plot</td></tr>
+<tr> <td width="20%"><a href="prtools/prex_mds.html">prex_mds</a> </td><td>Multi-dimensional scaling and visualisation</td></tr>
+<tr> <td width="20%"><a href="prtools/prex_som.html">prex_som</a> </td><td>Training a SelfOrganizing Maps</td></tr>
+<tr> <td width="20%"><a href="prtools/prex_spatm.html">prex_spatm</a> </td><td>Spatial smoothing of image classification</td></tr>
+<tr> <td width="20%"><a href="prtools/prex_cost.html">prex_cost</a> </td><td>Cost matrices and rejection</td></tr>
+<tr> <td width="20%"><a href="prtools/prex_logdens.html">prex_logdens</a> </td><td>Density based classifier improvement</td></tr>
+<tr> <td width="20%"><a href="prtools/prex_soft.html">prex_soft</a> </td><td>Soft label example</td></tr>
+<tr> <td width="20%"><a href="prtools/prex_regr.html">prex_regr</a> </td><td>Regression example</td></tr>
+</table></p>
+<p>
+<table cellspacing="2" cellpadding="0" width="100%" align="center" border="0">
+<tr> <td width="20%"><a href="prtools/prdownload.html">prdownload</a> </td><td>low level routine for retrieving datasets</td></tr>
+<tr> <td width="20%"><a href="prtools/prglobal.html">prglobal</a> </td><td>set / list all globals and settings</td></tr>
+<tr> <td width="20%"><a href="prtools/prversion.html">prversion</a> </td><td>returns version information on PRTools</td></tr>
+<tr> <td width="20%"><a href="prtools/prwaitbar.html">prwaitbar</a> </td><td>report PRTools progress by single waitbar</td></tr>
+<tr> <td width="20%"><a href="prtools/prwarning.html">prwarning</a> </td><td>control PRTools warning level</td></tr>
+<tr> <td width="20%"><a href="prtools/prmemory.html">prmemory</a> </td><td>control PRTools large dataset handling</td></tr>
+<tr> <td width="20%"><a href="prtools/prtime.html">prtime</a> </td><td>control maximum run time of some optimisations</td></tr>
+<tr> <td width="20%"><a href="prtools/prtver.html">prtver</a> </td><td>prtools version back end</td></tr>
+<tr> <td width="20%"><a href="prtools/typp.html">typp</a> </td><td>list prtools routine nicely</td></tr>
+</table></p>
+<p>
+* classifiers that are not availble under Octave
+
+</p>
+<p>
+
+<table border="0" cellspacing="0" cellpadding="3" width="100%" align="center"><tr><td><a href="http://prtools.tudelft.nl/" target="_top">PRTools website</a></td>
+<td><p align="right"><a href="http://37steps.com/prtools" target="_top">PRTools Guide</a></p></td></tr></table></p></table></body></html>
