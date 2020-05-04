@@ -37,7 +37,7 @@ for j=1:length(c);
 			k = k+1;
 			u = strrep(u,'''','');
 			[featlab{k},u] = strtok(u);
- 			if strcmp(featlab{k},'class')
+ 			if strcmpi(featlab{k},'class')
 				featlab(k) = [];
  				k = k-1;
 %         skip as we determine lablist from data field
@@ -47,8 +47,7 @@ for j=1:length(c);
 % 				eval(['lablist = ' u]);
 			else
 				if ~any(strcmp(strtrim(u),{'numeric','integer','real'}))
-					warning(['Non-numeric attributes are not supported ' ...
-						file ' ' u]);
+					warning('Non-numeric attributes are not supported %s %s', file, u);
 					a = []; 
 					return
 				end
