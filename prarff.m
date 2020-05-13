@@ -1,4 +1,4 @@
-%PRARFF COnvert ARFF file into PRTools dataset
+%PRARFF Convert ARFF file into PRTools dataset
 %
 %		A = PRARFF(FILE)
 %
@@ -11,145 +11,275 @@
 % DESCRIPTION
 % ARFF files as used in WEKA are converted into PRTools format. In case
 % they don't fit (non-numeric features, varying feature length) an error is
-% generated.
+% generated. Missing values are set to NaN.
 %
-% SEE ALSO (<a href="http://37steps.com/prtools">PRTools Guide</a>)
+% SEE ALSO (<a href="http://prtools.tudelft.nl/prtools">PRTools Guide</a>)
 % DATASETS
+function dataset = prarff(path)
+    if nargin < 1
+       error('Insert file path.'); 
+    end
 
-function a = prarff(file)
+    file = open_file(path);
+    global lineIndex;
+    lineIndex = 0;
 
-if nargin < 1 || exist(file) ~= 2
-	error('file not found');
+    metadata = parse_header(file);
+    data = parse_data(file, metadata);
+    fclose(file);
+
+    feature_list = get_feature_names(metadata.feature_map);
+
+    dataset = prdataset(data.data, data.labels);
+    dataset = setfeatlab(dataset, feature_list);
+    dataset = setname(dataset, metadata.dataset_name);
 end
 
-t = txtread(file);
-c = cell2str(t);
+%Opens a file checking for errors
+function file = open_file(path)
+    if ~exist(path, 'file')    
+        error('File not exist.');
+    end
 
-k = 0;
-nodata = 1;
-for j=1:length(c);
-	if nodata
-		[s,u] = strtok(c{j});
-		if strcmp(s,'@relation')
-			name = strtrim(u);
-		end
-		if strcmp(s,'@attribute')
-			k = k+1;
-			u = strrep(u,'''','');
-			[featlab{k},u] = strtok(u);
- 			if strcmpi(featlab{k},'class')
-				featlab(k) = [];
- 				k = k-1;
-%         skip as we determine lablist from data field
-% 				u = strrep(u,'{','{''');
-% 				u = strrep(u,'}','''}');
-% 				u = strrep(u,',',''',''');
-% 				eval(['lablist = ' u]);
-			else
-				if ~any(strcmp(strtrim(u),{'numeric','integer','real'}))
-					warning('Non-numeric attributes are not supported %s %s', file, u);
-					a = []; 
-					return
-				end
-			end
-		end
-		if strcmp(s,'@data')
-			nodata = 0;
-			form = [repmat('%e,',1,k) '%s'];
-			a = zeros(length(c)-j,k);
-			m = 0;
-		end
-	else
-		if length(find(c{j}==',')) == k
-			m = m+1;
-			x = sscanf(c{j},form);
-			a(m,:) = x(1:k);
-			labels{m} = char(x(k+1:end))';
-		elseif length(find(c{j}==',')) == k-1 % unlabeled?
-			m = m+1;
-			x = sscanf(c{j},form);
-			a(m,:) = x(1:k);
-			labels{m} = '';
-		else
-			error('Data size doesn''t match number of attributes')
-		end
-	end
+    [file, err] = fopen(path, 'r');
+
+    if(err)
+        error(err);
+    end
+
 end
-a = prdataset(a,labels);
-a = setfeatlab(a,featlab);
-a = setname(a,name);
 
-return
-		
-		
-%STR2CELL String to cell conversion
-%
-%		C = STR2CELL(S)
-%
-% INPUT
-%   S    String
-%
+%Convert feature names from feature map to line vector.
+function features = get_feature_names(feature_map)
+    features = cell(1, length(feature_map));
+    for i=keys(feature_map)
+        features{i{1}} = feature_map(i{1}).name;
+    end
+end
+
+%PARSE_HEADER Parse arff header and returns the metadata.
+% INPUT file
+%   the arff file.
+% OUTPUT struct metadata
+%   dataset_name: the name of the dataset.
+%   labels: a map containing the label values.
+%       key: label name.
+%       value: index of label on file.
+%   feature_map: a map containing the declared features.
+%       key: index of feature declaration.
+%       value: a struct containing the feature data
+%           name: feature name.
+%           type: feature type.
+function metadata = parse_header(file)
+    feature_map = containers.Map('KeyType','int32', 'ValueType','any');
+    feature_index = 1;
+
+    metadata.dataset_name = parse_relation(file);
+
+    has_read_data_declaration = false;
+    has_read_labels = false;
+    while ~feof(file)
+        file_line = nextLine(file);
+        if(isempty(file_line) || startsWith(file_line, '%'))
+            continue;
+        end
+        
+        if(strcmp(file_line, '@data'))
+            has_read_data_declaration = true;
+            break;
+        end   
+
+        [clause, value, data] = split_line(file_line);
+        
+        if(strcmpi(value, 'class'))
+            if(has_read_labels)
+               error('Duplicated class declaration.'); 
+            end
+            labels = parse_labels(clause, value, data);
+            metadata.labels = labels;
+            has_read_labels = true;
+        else
+            feature = parse_feature(clause, value, data);
+            feature_map(feature_index) = feature;
+            feature_index = feature_index + 1;
+        end
+    end
+    if(~has_read_data_declaration)        
+       warning('The file has no data declaration.'); 
+    end
+    if(~has_read_labels)
+       error('No labels read.'); 
+    end
+    metadata.feature_map = feature_map;
+end
+
+%Get line and increment line number to use in error reporting.
+function line = nextLine(file)    
+    global lineIndex;
+    line = fgetl(file);
+    lineIndex = lineIndex + 1;
+end
+
+%Parse the @relation [name] declaration
 % OUTPUT
-%   A    Cell array
-%
-% DESCRIPTION
-% The string S is broken into a set of strings, one for each line. Each of
-% them is place into a different element of the cell araay C
+%   the dataset name.
+function relation = parse_relation(file)
 
-function c = cell2str(s)
+ while ~feof(file)
 
-if nargin < 1 || ~ischar(s)
-	error('No input string found')
+    file_line = nextLine(file);
+    if(isempty(file_line) || startsWith(file_line, '%'))
+        continue;
+    end
+
+    spaces = strfind(file_line, ' ');
+
+    clause = file_line(1:spaces-1);
+    assert(strcmpi(clause, '@relation'), 'The relation must be the first declaration of the file.');
+
+    name = file_line(spaces+1:length(file_line));
+    relation = name;
+    break;
+ end
 end
 
-s = strrep([s char(10)],char([10 13]),char(10));
-s = strrep(s,char([13 10]),char(10));
-s = strrep(s,char([10 10]),char(10));
-s = strrep(s,char(13),char(10));
-n = [0 strfind(s,char(10))];
 
-c = cell(length(n-1),1);
-for j=1:length(n)-1
-	c{j} = s(n(j)+1:n(j+1)-1);
-end
-if isempty(c{end})
-	c(end) = [];
+%Split @attribute declaration into its components.
+%ex: '@attribute [name] [value]' -> {'@attribute', '[name]', '[value]'}
+function [clause, value, data] = split_line(file_line)
+    spaces = strfind(file_line, ' ');    
+    clause = strtrim(file_line(1:spaces(1)-1));
+    value = strtrim(file_line(spaces(1)+1:spaces(2)-1));
+    if(ismember(value(1), '''"'))
+        if(ismember(value(length(value)), '''"'))
+            value = value(2:length(value)-1);
+        else
+            error('Quoted value doesn''t end with quote.');
+        end
+    end
+    data = strtrim(file_line(spaces(2)+1:length(file_line)));
 end
 
-%TXTREAD Read text file
-% 
-% 	A = TXTREAD(FILENAME,N,START)
-% 
+
+%Parse the @attribute class [labels] declaration.
+% OUTPUT labels map
+%   key: label name.
+%   value: label index.
+function labels = parse_labels(clause, value, data)
+    assert(strcmpi(clause, '@attribute'));
+    assert(strcmpi(value, 'class'));
+    data = strtrim(data);
+    data = check_enclosing_braces(data);
+    data = split(data, ',');
+    labels = build_labels(data);
+end
+
+%Check if labels have correct braces and remove it.
+function data = check_enclosing_braces(data)
+    if(strcmp(data(1), '{'))
+        data = data(2:length(data));
+    else 
+        warning('The classes declaration must start with open brace ({)');
+    end
+    if(strcmp(data(length(data)), '}'))
+        data = data(1:length(data)-1);
+    else 
+        warning('The classes declaration must end with close brace (})');
+    end
+end
+
+%Create a map with class labels.
 % INPUT
-%   FILENAME  Name of delimited ASCII file
-%   N         Number of elements to be read (default all)
-%   START     First element to be read (default 1)
-%  
+%   list with label names.
 % OUTPUT
-%   A         String
-% 
-% DESCRIPTION
-% Reads the total file as text string into A
+%   key: label name.
+%   value: label index.
+function labels = build_labels(data)
+    labels = containers.Map('KeyType', 'char', 'ValueType', 'int32');
+    label_index = 1;
+    for i = 1:size(data, 1)
+        v = strtrim(data(i, :));
+        labels(v{1}) = label_index;
+        label_index = label_index + 1;    
+    end
 
-% Copyright: R.P.W. Duin, r.p.w.duin@37steps.com
-% Faculty EWI, Delft University of Technology
-% P.O. Box 5031, 2600 GA Delft, The Netherlands
+end
 
-function a = txtread(file,n,nstart)
+%Create a struct with attribute values.
+function feature = parse_feature(clause, name, type)
+    assert(strcmpi(clause, '@attribute'));
+    feature.name = name;
+    feature.type = type;
+end
 
-	if nargin < 3, nstart = 1; end
-	if nargin < 2 || isempty(n), n = inf; end
+%Parse the @data section of the file.
+% INPUT
+%   the file after header parsing
+% OUTPUT
+%   a struct with the data values and labels.
+%   data: the data values.
+%   labels: the data labels.
+function dataset = parse_data(file, metadata)
+    data_index = 1;
+    %todo do data preallocation to improve speed
+    while ~feof(file)
+        file_line = nextLine(file);
+        if(isempty(file_line) || startsWith(file_line, '%'))
+            continue;
+        end
+        data_line = strsplit(file_line, {',', '\t'});
 
-	fid = fopen(file);
-	if (fid < 0)
-		error('Error in opening file.')
-	end
-	a = fscanf(fid,'%c',n);
-	fclose(fid);
-	
-return
-			
-		
-	
+        line_rage = data_line(1:length(data_line)-1);
+        parsed_data = parse_data_line(line_rage, metadata);
+        data(data_index, :) = parsed_data;
 
-% 
+        labels{data_index} = data_line{length(data_line)};
+        data_index = data_index +1;
+    end
+
+    dataset.data = data;
+    dataset.labels = labels;
+end
+
+%Break a data line converting it's values.
+% OUTPUT
+%   return a line vector with the value converted by the metadata
+%   description.
+function parsed_data = parse_data_line(data_line, metadata)    
+    global lineIndex;
+    parsed_data = zeros(1, length(data_line));
+
+    if(length(data_line) ~= length(metadata.feature_map))      
+        data = join(data_line, ' ');
+        error("The data line doesn't have all features.\nline: %d\n data: %s", lineIndex, data{1});        
+    end
+    for i=1:length(data_line)        
+        
+        if(~strcmp(data_line{i}, '?'))          
+            
+            value = convert_data(data_line{i}, metadata.feature_map(i).type);        
+            parsed_data(i) = value;   
+        else
+            parsed_data(i) = NaN;
+        end
+    end    
+end
+
+%Convert the data string to the specified type.
+function data = convert_data(value, type)
+
+    switch(type)
+        
+        case {'numeric', 'integer', 'real'}
+            data = str2double(value);
+            
+        %todo discretize string and date values to support non numeric
+        %features.
+        case {'string', 'date'}          
+            error('Non numeric features is not supported yet.');            
+        otherwise
+            error(['Unsuported type: ' type]);        
+    end
+
+
+end
