@@ -21,6 +21,8 @@ function dataset = prarff(path)
     end
 
     file = open_file(path);
+    global lineIndex;
+    lineIndex = 0;
 
     metadata = parse_header(file);
     data = parse_data(file, metadata);
@@ -77,7 +79,7 @@ function metadata = parse_header(file)
     has_read_data_declaration = false;
     has_read_labels = false;
     while ~feof(file)
-        file_line = fgetl(file);
+        file_line = nextLine(file);
         if(isempty(file_line) || startsWith(file_line, '%'))
             continue;
         end
@@ -88,7 +90,7 @@ function metadata = parse_header(file)
         end   
 
         [clause, value, data] = split_line(file_line);
-
+        
         if(strcmpi(value, 'class'))
             if(has_read_labels)
                error('Duplicated class declaration.'); 
@@ -105,7 +107,17 @@ function metadata = parse_header(file)
     if(~has_read_data_declaration)        
        warning('The file has no data declaration.'); 
     end
+    if(~has_read_labels)
+       error('No labels read.'); 
+    end
     metadata.feature_map = feature_map;
+end
+
+%Get line and increment line number to use in error reporting.
+function line = nextLine(file)    
+    global lineIndex;
+    line = fgetl(file);
+    lineIndex = lineIndex + 1;
 end
 
 %Parse the @relation [name] declaration
@@ -115,7 +127,7 @@ function relation = parse_relation(file)
 
  while ~feof(file)
 
-    file_line = fgetl(file);
+    file_line = nextLine(file);
     if(isempty(file_line) || startsWith(file_line, '%'))
         continue;
     end
@@ -136,9 +148,16 @@ end
 %ex: '@attribute [name] [value]' -> {'@attribute', '[name]', '[value]'}
 function [clause, value, data] = split_line(file_line)
     spaces = strfind(file_line, ' ');    
-    clause = file_line(1:spaces(1)-1);
-    value = file_line(spaces(1)+1:spaces(2)-1);
-    data = file_line(spaces(2)+1:length(file_line));
+    clause = strtrim(file_line(1:spaces(1)-1));
+    value = strtrim(file_line(spaces(1)+1:spaces(2)-1));
+    if(ismember(value(1), '''"'))
+        if(ismember(value(length(value)), '''"'))
+            value = value(2:length(value)-1);
+        else
+            error('Quoted value doesn''t end with quote.');
+        end
+    end
+    data = strtrim(file_line(spaces(2)+1:length(file_line)));
 end
 
 
@@ -204,7 +223,10 @@ function dataset = parse_data(file, metadata)
     data_index = 1;
     %todo do data preallocation to improve speed
     while ~feof(file)
-        file_line = fgetl(file);
+        file_line = nextLine(file);
+        if(isempty(file_line) || startsWith(file_line, '%'))
+            continue;
+        end
         data_line = strsplit(file_line, {',', '\t'});
 
         line_rage = data_line(1:length(data_line)-1);
@@ -224,10 +246,13 @@ end
 %   return a line vector with the value converted by the metadata
 %   description.
 function parsed_data = parse_data_line(data_line, metadata)    
-   
+    global lineIndex;
     parsed_data = zeros(1, length(data_line));
 
-    assert(length(data_line) == length(metadata.feature_map), "The data line doesn't have all features.");
+    if(length(data_line) ~= length(metadata.feature_map))      
+        data = join(data_line, ' ');
+        error("The data line doesn't have all features.\nline: %d\n data: %s", lineIndex, data{1});        
+    end
     for i=1:length(data_line)        
         
         if(~strcmp(data_line{i}, '?'))          
@@ -253,7 +278,7 @@ function data = convert_data(value, type)
         case {'string', 'date'}          
             error('Non numeric features is not supported yet.');            
         otherwise
-            error('Unsuported type');        
+            error(['Unsuported type: ' type]);        
     end
 
 
