@@ -9,7 +9,7 @@ function w = setmapping_file(w,mapping_file)
 if ~ischar(mapping_file)
 	error('Name of executing m-file not found')
 end
-if ~exist(mapping_file)
+if ~exist(mapping_file, 'file')
 	error([mapping_file ' not found in the search path'])
 end
 
